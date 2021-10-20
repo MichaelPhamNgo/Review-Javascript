@@ -168,7 +168,6 @@ shift()
 ```
 
 ***USING***
-:triangular_flag_on_post: 
 <table>      
   <tr>
     <td>Return</td>

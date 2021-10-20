@@ -1722,7 +1722,6 @@ shift()
 ```
 
 ***USING***
-:triangular_flag_on_post: 
 <table>      
   <tr>
     <td>Return</td>
@@ -2185,7 +2184,6 @@ arr.forEach(function(currentValue, index, arr){
       console.log(index, currentValue, arr);
     }
 );
-//output: 
 //0 6 [6, 9, 4, 8, 3, 10, 1, 2]
 //1 9 [6, 9, 4, 8, 3, 10, 1, 2]
 //2 4 [6, 9, 4, 8, 3, 10, 1, 2]
@@ -3128,39 +3126,40 @@ Person.prototype.fullName = function() {
 ```
 
 ## VII. Set and Set methods
-:triangular_flag_on_post: Features
-- A collection of unique values
-- Each value can only occur once in a Set
+> A collection of unique values
+> Each value can only occur once in a Set
+
+***EXAMPLE***
 ```javascript
 //ex
 var number = new Set([0,1,2,3,0,1,2,3]);        
-console.log(number);                        //output: {0, 1, 2, 3}
+console.log(number);                        //{0, 1, 2, 3}
 ```
 
 ### VII.1 Create a set
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Create a set
 var letters = new Set(["a","b","c"]);
-console.log(letters);                        //output: {"a", "b", "c"}
-
-//ex
+console.log(letters);                        //{"a", "b", "c"}
+//or
 letters = new Set();
 letters.add("a");
 letters.add("b");
 letters.add("c");
-console.log(letters);                        //output: {"a", "b", "c"}
+console.log(letters);                        //{"a", "b", "c"}
 ```
 
 ### VII.2 Add an element in a set
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Add elements to a set
 var letters = new Set();
 letters.add("a");
 letters.add("b");
 letters.add("c");
-console.log(letters);                        //output: {"a", "b", "c"}
-
-//ex
+console.log(letters);                        //{"a", "b", "c"}
+//or
 var a = "a";
 var b = "b";
 var c = "c";
@@ -3168,174 +3167,217 @@ var letters = new Set();
 letters.add(a);
 letters.add(b);
 letters.add(c);
-console.log(letters);                        //output: {"a", "b", "c"}
+console.log(letters);                        //{"a", "b", "c"}
 ```
 
 ### VII.3 Delete an element in a set
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Delete an element in a set
 var letters = new Set(["a","b","c"]);
 letters.delete("a");
-console.log(letters);                        //output: {"b", "c"}
-```
-### VII.4 Set methods
-:triangular_flag_on_post: size of a set
-```javascript
-//ex
-var letters = new Set(["a","b","c"]);
-console.log(letters.size);                    //output: 3
+console.log(letters);                        //{"b", "c"}
 ```
 
-:triangular_flag_on_post: check existing of an element in a set
+### VII.4 size
+> Size of a set
+
+***SYNTAX***
 ```javascript
-//ex
-var letters = new Set(["a","b","c"]);
-console.log(letters.has("a"));              //output: true
+size
 ```
 
-:triangular_flag_on_post: remove all elements in a set
+***EXAMPLE***
 ```javascript
-//ex
+//ex: get size of the set
 var letters = new Set(["a","b","c"]);
-console.log(letters.clear());                 //output: undefined
+console.log(letters.size);                    //3
 ```
 
-:triangular_flag_on_post: forEach, for
-```javascript
-//ex
-//forEach
-var letters = new Set(["a","b","c"]);
-letters.forEach(function(value){
-  console.log(value);
-})
+### VII.5 has
+> Check existing of an element in a set
 
-//for with keys
+***SYNTAX***
+```javascript
+has(element)
+```
+
+***EXAMPLE***
+```javascript
+//ex: Check "a" if it is in set
+var letters = new Set(["a","b","c"]);
+console.log(letters.has("a"));              //true
+```
+
+c
+> Remove all elements in a set
+
+***SYNTAX***
+```javascript
+clear()
+```
+
+***EXAMPLE***
+```javascript
+//ex: remove all elements
+var letters = new Set(["a","b","c"]);
+console.log(letters.clear());                 //undefined
+```
+
+### VII.7 for
+***EXAMPLE***
+```javascript
+//ex1: loop all elements in set using keys
 var letters = new Set(["a","b","c"]);
 for(var key of letters.keys()) {
   console.log(key);
 }
 
-//for with values
+//ex2: loop all elements in set using values
 var letters = new Set(["a","b","c"]);
 for(var value of letters.values()) {
   console.log(value);
 }
 
-//for with keys, values
+//ex3: loop all elements in set using entries
 var letters = new Set(["a","b","c"]);
 for(var [key, value] of letters.entries()) {
   console.log(key, value);
 }
 ```
 
+### VII.8 forEach
+***EXAMPLE***
+```javascript
+//ex: loop all elements using forEach
+var letters = new Set(["a","b","c"]);
+letters.forEach(function(value){
+  console.log(value);
+})
+```
+
 ## VIII. Map and Map methods
-:triangular_flag_on_post: Features
-- A Map holds key-value pairs
-- A Map remembers the original insertion order of the keys
+> A Map holds key-value pairs
+> A Map remembers the original insertion order of the keys
 
 ### VIII.1 Create a map
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Create a new map
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
-console.log(fruits);                        //output: {'apples' => 500, 'bananas' => 300, 'oranges' => 200}
-
-//ex
+console.log(fruits);                //{'apples' => 500, 'bananas' => 300, 'oranges' => 200}
+//or
 var fruits = new Map();
 // Set Map Values
 fruits.set("apples", 500);
 fruits.set("bananas", 300);
 fruits.set("oranges", 200);
-console.log(fruits);                        //output: {'apples' => 500, 'bananas' => 300, 'oranges' => 200}
+console.log(fruits);                //{'apples' => 500, 'bananas' => 300, 'oranges' => 200}
 ```
 
 ### VIII.2 Add an element in a map
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Add a new element to a map
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
 fruits.set("grapes", 100);
-console.log(fruits);                        //output: {'apples' => 500, 'bananas' => 300, 'oranges' => 200, 
-                                            //'grapes' => 100}
+console.log(fruits);                //{'apples' => 500, 'bananas' => 300, 'oranges' => 200, 'grapes' => 100}
 ```
 
 ### VIII.3 Get an element in a map
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Get a value by a key in map
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
-console.log(fruits.get("bananas"));       //output: 300
+console.log(fruits.get("bananas")); //300
 ```
 
 ### VIII.4 Delete an element in a map
+***EXAMPLE***
 ```javascript
-//ex
+//ex: Delete an element in a map with a key
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
 fruits.delete("oranges");
-console.log(fruits);                        //output: {'apples' => 500, 'bananas' => 300}
+console.log(fruits);                //{'apples' => 500, 'bananas' => 300}
 ```
 
-### VIII.5 Map methods
-:triangular_flag_on_post: size of a map
+### VIII.5 size
+> Size of a map
+
+***SYNTAX***
 ```javascript
-//ex
+size
+```
+
+***EXAMPLE***
+```javascript
+//ex: get size of a map
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
-console.log(fruits.size);                   //output: 3
+console.log(fruits.size);         //3
 ```
 
-:triangular_flag_on_post: check existing of an element in a map
+### VIII.6 has
+> Check existing of an element in a map
+
+***SYNTAX***
 ```javascript
-//ex
+has(key)
+```
+
+***EXAMPLE*** 
+```javascript
+//ex: check if apples in map
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
-console.log(fruits.has("apples"));           //output: true
+console.log(fruits.has("apples"));  //true
 ```
 
-:triangular_flag_on_post: remove all elements in a set
+### VIII.7 clear
+> Remove all elements in a set
+
+***SYNTAX***
 ```javascript
-//ex
+clear()
+```
+
+***EXAMPLE*** 
+```javascript
+//ex: Remove all elements in a set
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
   ["oranges", 200]
 ]);
-console.log(fruits.clear());                 //output: undefined
+console.log(fruits.clear());      //undefined
 ```
 
-:triangular_flag_on_post: forEach, for
+### VIII.8 for
+***EXAMPLE*** 
 ```javascript
-//ex
-//forEach
-var fruits = new Map([
-  ["apples", 500],
-  ["bananas", 300],
-  ["oranges", 200]
-]);
-fruits.forEach(function(value, key){
-  console.log(key, value);
-})
-
-//for with keys
+//ex1: Iterate through the map using keys
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
@@ -3345,7 +3387,7 @@ for(var key of fruits.keys()) {
   console.log(key);
 }
 
-//for with values
+//ex2: Iterate through the map using values
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
@@ -3355,7 +3397,7 @@ for(var value of fruits.values()) {
   console.log(value);
 }
 
-//for with keys, values
+//ex3: Iterate through the map using pair of keys and values
 var fruits = new Map([
   ["apples", 500],
   ["bananas", 300],
@@ -3364,6 +3406,21 @@ var fruits = new Map([
 for(var [key, value] of fruits.entries()) {
   console.log(key, value);
 }
+```
+
+
+### VIII.9 forEach
+***EXAMPLE*** 
+```javascript
+//ex: Iterate through the map using forEach
+var fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+fruits.forEach(function(value, key){
+  console.log(key, value);
+})
 ```
 
 ## IX. try catch
