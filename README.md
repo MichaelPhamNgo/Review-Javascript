@@ -2572,13 +2572,13 @@ map(function(currentValue, index, arr))
 ***EXAMPLE***
 ```javascript
 //ex1
-var persons = [
+var people = [
   {firstname : "Malcom", lastname: "Reynolds"},
   {firstname : "Kaylee", lastname: "Frye"},
   {firstname : "Jayne", lastname: "Cobb"}
 ];
-//Get all cities having the population greater than 3 million 
-var result = persons.map(function(currentValue, index, arr){
+//Concat firtName and lastName and return to an array
+var result = people.map(function(currentValue, index, arr){
                   return currentValue.firstname + " " + currentValue.lastname;
                 }
               );

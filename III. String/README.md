@@ -81,7 +81,6 @@ slice(start, end)
 - end >= length of the string, return an extracted string from start to end of the string
 ---
 
-
 ### substring
 > Extracts parts of a string.
 
