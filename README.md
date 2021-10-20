@@ -3671,16 +3671,16 @@ function counter()
 }
 
 let c = counter();
-console.log(c());         //output: 1
-console.log(c());         //output: 2
-console.log(c());         //output: 3
+console.log(c());         //1
+console.log(c());         //2
+console.log(c());         //3
 ```
+
 ***NOTE***
 ---
 - Show private feature
-
+***EXAMPLE***
 ```javascript
-//ex
 //Assuming we want to add, edit, or delete a person in a people array
 const app = {
     people : [],    
@@ -3696,7 +3696,7 @@ const app = {
 }
 //but if we assign app.people = null, and we add a new person to array people
 //> app.people = null
-//> app.add({firstName:"John", lastName:"Doe"})       //output: Uncaught TypeError: Cannot read properties of null (reading 'push')
+//> app.add({firstName:"John", lastName:"Doe"})       //Uncaught TypeError: Cannot read properties of null (reading 'push')
 
 //To solve this problem, we use closure
 function createApp() {
@@ -3720,11 +3720,45 @@ function createApp() {
 //> app.add({firstName:"John", lastName:"Doe"})       
 //> app.add({firstName:"Steve", lastName:"Job"})       
 //> app.add({firstName:"Bill", lastName:"Gate"})  
-//> app.get(1)                                      //output: {firstName: 'Steve', lastName: 'Job'}
+//> app.get(1)                                      //{firstName: 'Steve', lastName: 'Job'}
 ```
 ---
 ### X.3 Strict mode
-[Read More](https://www.w3schools.com/js/js_strict.asp)
+> Prevent unsafe codes or potential errors when using global variables
+>   must be used var, let, const to declare a new variable
+>   cannot use private, protected, etc
+>   cannot use the same properties in a function
+>   cannot use a function out of a block code
+***EXAMPLE***
+```javascript
+//ex1: must be used var, let, const to declare a new variable
+'use strict';
+x = 2;        //Uncaught ReferenceError: x is not defined
+//or 
+'use strict';
+function showX() {
+  x = 2;      //Uncaught ReferenceError: x is not defined
+}
+
+//ex2: cannot use private, protected, etc
+'use strict';
+var private = 2;  //Uncaught SyntaxError: Unexpected strict mode reserved word
+
+//ex3: cannot use the same properties in a function
+'use strict';
+function sum(a, a) {    //Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+  return a + a; 
+}
+
+//ex4: cannot use a function out of a block code
+'use strict';
+{
+	function sum(a, b) {
+  		return a + b; 
+  	}  
+}
+console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
+```
 
 ## XI. Hoisting
 :triangular_flag_on_post: Features
