@@ -3408,7 +3408,6 @@ for(var [key, value] of fruits.entries()) {
 }
 ```
 
-
 ### VIII.9 forEach
 ***EXAMPLE*** 
 ```javascript
@@ -3423,8 +3422,10 @@ fruits.forEach(function(value, key){
 })
 ```
 
-## IX. try catch
-:triangular_flag_on_post: try..catch..finally
+## IX. try catch finally
+> Catch error
+
+***SYNTAX***
 ```javascript
 try {
   Block of code to try
@@ -3436,12 +3437,15 @@ finally {
   Block of code to be executed regardless of the try / catch result
 }
 ```
+
+***USING***
 - ***try:*** define a block of code to be tested for errors while it is being executed.
 - ***catch:*** define a block of code to be executed, if an error occurs in the try block.
 - ***finally:*** execute code, after try and catch, regardless of the result.
 
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 try {
    console.log("Hello");
    someFunction();
@@ -3449,9 +3453,9 @@ try {
 } catch (error) {   
    console.log(error.message);
 } 
-//output: Hello someFunction is not defined
+//Hello someFunction is not defined
 
-//ex
+//ex2
 try {
    console.log("Hello");
    someFunction();
@@ -3461,9 +3465,9 @@ try {
 } finally {
   console.log("!");
 }
-//output: Hello someFunction is not defined !
+//Hello someFunction is not defined !
 
-//ex
+//ex3
 function foo() {
   try {
       'use strict';
@@ -3475,12 +3479,13 @@ function foo() {
       return false;
   }
 } 
-console.log(foo());             //output: false;
+console.log(foo());             //false;
 ```
 
-:triangular_flag_on_post: throw
+***USING***
 - ***throw:*** create a custom error. The exception can be a string, number, boolean, or an object.
 
+***EXAMPLE***
 ```javascript
 //ex
 let x = prompt("Please enter x");
@@ -3493,12 +3498,15 @@ try {
 } catch (error) {
   console.log("error:", error);
 }
-```
-- if x = 10, the output is "error: Positive";
-- if x = -10, the output is "error: Negative";
-- if x = "", the output is "error: empty";
-- if x = string, the output is "error: Not a Number";
 
+//if x = 10, the output is "error: Positive";
+//if x = -10, the output is "error: Negative";
+//if x = "", the output is "error: empty";
+//if x = string, the output is "error: Not a Number";
+```
+
+---
+***NOTE***
 <table> 
   <tr>
     <td colspan="2"><strong>Error Description</strong></td>
@@ -3561,77 +3569,92 @@ try {
     </td>
   </tr>
 </table>
+---
 
 ## X. Scope, Closure and strict mode
 ### X.1 Scope 
-There are 3 types of scopes:
-- Block scope
+> There are 3 types of scopes:
+>   Block scope
+>   Function scope
+>   Global  scope
+
+#### Block scope
+***EXAMPLE***
 ```javascript
-//ex
+//ex1: cannot access x out of block scope if using let
 {
   let x = 2;
-  console.log(x);           //output: 2
+  console.log(x);           //2
 }
-//cannot access x out of block scope if using let
+console.log(x);             //Error
 
-//ex
+//ex2:
 {
   var x = 2;
   console.log(x);           //output: 2
 }
 console.log(x);             //output: 2
 ```
-- Function scope
+
+#### Function scope
+***EXAMPLE***
 ```javascript
 //ex
 function showX(){
-  let x = 0;                //inside function is called Function scope
+  let x = 0;
   return x;
 }
-//cannot access x here
+console.log(x);             //Error
 ```
-- Global  scope
+
+#### Global scope
+***EXAMPLE***
 ```javascript
 //ex
 let x = 2;
-console.log(x);             //output: 2
+console.log(x);             //2
 function showX(){
-  console.log(x);           //output: 2
+  console.log(x);           //2
 }
-console.log(x);             //output: 2
+console.log(x);             //2
 ```
+
 ***NOTE***
 ---
 - With let, const, var, we are able to access from the inside code block
+***EXAMPLE***
 ```javascript
 let x = 2;
 {
   {    
-    console.log(x);     //ouput: 2
+    console.log(x);       //2
   }
 }
 ```
 - We can declare the same variables
+***EXAMPLE***
 ```javascript
 let x = 2;
 {
   {    
     let x = 10;
-    console.log(x);     //ouput: 10            
+    console.log(x);       //10            
   }
 }
 ```
 - Even so
+***EXAMPLE***
 ```javascript
 let x = 2;
 {
   {    
-    console.log(x);     //ouput: Cannot access 'x' before initialization because hoisting     
+    console.log(x);     //Cannot access 'x' before initialization because hoisting     
     let x = 10;
   }    
 }
 ```
 ---
+
 ### X.2 Closure 
 > A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 ```javascript
