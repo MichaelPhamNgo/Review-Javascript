@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>    
+</head>
+<body>    
+    <div class="container">
+        <h2>Task Management</h2>
+        <hr/>
+        <div class="main">
+            <div class="card">
+                <div class="card-header">
+                    Add new Task <i class="fas fa-times-circle right"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Username</div>
+                    <div class="card-input">
+                        <input type="text" class="form-input username"/>
+                    </div>
+                    <div class="card-title">Status</div>
+                    <div class="card-input">
+                        <select class="form-select status">
+                            <option value="0"> All </option>
+                            <option value="1"> Active </option>
+                            <option value="2"> Denied </option>
+                        </select>
+                    </div>
+                    <input type="button" value="Submit" class="form-button warning"/>
+                    <input type="button" value="Cancel" class="form-button danger"/>
+                </div>
+            </div>
+            <div class="task-list">
+                <div class="task-list_add_new">
+                    <input type="button" value="Add New Task" class="form-button primary"/>
+                </div>
+                <div class="task-list_search_form">
+                    <span class="task-list_search">
+                        <input type="text" placeholder="Search Here ..." class="form-input"/>
+                        <button type="button" class="form-button primary">
+                            Search <i class="fas fa-search"></i>
+                        </button>
+                    </span>                    
+                    <span class="task-list_sort">
+                        <button type="button" class="form-button primary">
+                            Sort <i class="fas fa-sort-down"></i>
+                        </button>      
+                        <!-- <ul class="task-list_sort_type">
+                            <li>
+                                <a>
+                                    <i class="fas fa-sort-alpha-down">&nbsp;&nbsp;A-Z</i>                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i class="fas fa-sort-alpha-up-alt">&nbsp;&nbsp;Z-A</i>                                    
+                                </a>
+                            </li>                            
+                            <li>
+                                <a>Active</a>
+                            </li>
+                            <li>
+                                <a>Denied</a>
+                            </li>
+                        </ul> -->
+                    </span>   
+                </div>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Username</td>
+                            <td>Status</td>
+                            <td>Action</td>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><input type="text" class="form-input"/></td>
+                            <td>
+                                <select class="form-select">
+                                    <option value="0"> All </option>
+                                    <option value="1"> Active </option>
+                                    <option value="2"> Denied </option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Learning Angular</td>
+                            <td>
+                                <span class="active">Active</span>
+                            </td>
+                            <td>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button warning">
+                                        Edit <i class="far fa-edit"></i>
+                                    </button>                                    
+                                </span>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button danger">
+                                        Delete <i class="far fa-trash-alt"></i>
+                                    </button>                                                                 
+                                </span>                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Learning Angular</td>
+                            <td>
+                                <span class="active">Active</span>
+                            </td>
+                            <td>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button warning">
+                                        Edit <i class="far fa-edit"></i>
+                                    </button>                                    
+                                </span>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button danger">
+                                        Delete <i class="far fa-trash-alt"></i>
+                                    </button>                                                                 
+                                </span>                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Learning Angular</td>
+                            <td>
+                                <span class="active">Active</span>
+                            </td>
+                            <td>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button warning">
+                                        Edit <i class="far fa-edit"></i>
+                                    </button>                                    
+                                </span>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button danger">
+                                        Delete <i class="far fa-trash-alt"></i>
+                                    </button>                                                                 
+                                </span>                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Learning Angular</td>
+                            <td>
+                                <span class="active">Active</span>
+                            </td>
+                            <td>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button warning">
+                                        Edit <i class="far fa-edit"></i>
+                                    </button>                                    
+                                </span>
+                                <span class="task-list_edit_button">
+                                    <button type="button" class="form-button danger">
+                                        Delete <i class="far fa-trash-alt"></i>
+                                    </button>                                                                 
+                                </span>                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
