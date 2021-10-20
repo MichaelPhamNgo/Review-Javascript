@@ -715,9 +715,9 @@ indexOf(searchvalue, start)
 ```javascript
 //ex
 var str = 'Please locate where "locate" occurs!';
-console.log(str.indexOf('locate'));    //ouput: 7
-console.log(str.indexOf('locate',8));  //ouput: 21
-console.log(str.indexOf('data'));      //ouput: -1
+console.log(str.indexOf('locate'));    //7
+console.log(str.indexOf('locate',8));  //21
+console.log(str.indexOf('data'));      //-1
 ```
 
 ## III.11 lastIndexOf
