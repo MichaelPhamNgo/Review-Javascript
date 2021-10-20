@@ -3657,6 +3657,8 @@ let x = 2;
 
 ### X.2 Closure 
 > A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+***EXAMPLE***
 ```javascript
 //ex
 function counter()
@@ -3676,6 +3678,7 @@ console.log(c());         //output: 3
 ***NOTE***
 ---
 - Show private feature
+
 ```javascript
 //ex
 //Assuming we want to add, edit, or delete a person in a people array
