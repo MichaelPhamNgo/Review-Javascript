@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
     <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/style.css"/>  
+    <link rel="stylesheet" href="css/style.css"/>      
 </head>
-<body>
+<body>    
     <div class="container">
         <div class="main">
             <div class="color-picker">
@@ -16,21 +16,6 @@
                     Color Picker
                 </div>
                 <div class="card-body">
-                    <div class="box blue active">
-
-                    </div>
-                    <div class="box gray">
-
-                    </div>
-                    <div class="box green">
-
-                    </div>
-                    <div class="box red">
-
-                    </div>
-                    <div class="box yellow">
-
-                    </div>                    
                 </div>
             </div>
             <div class="size-system">
@@ -39,19 +24,16 @@
                         Size: 12px
                     </div>
                     <div class="card-body">
-                        <button class="form-button red">+</button>
-                        <button class="form-button yellow">-</button>
+                        <button class="form-button yellow" onclick="changeSize(2)">+</button>
+                        <button class="form-button red" onclick="changeSize(-2)">-</button>
                     </div>                
                 </div>
-                <button class="form-button blue">Reset</button>
+                <button class="form-button blue" onclick="reset()">Reset</button>
             </div>            
         </div>        
-        <div class="setting-info">
-            Color : red - Font size : 12px
-        </div>
-        <div class="display">
-            Nội dung setting
-        </div>
-    </div>
+        <div class="setting-info"></div>
+        <div id="changeSize" class="display">Nội dung setting</div>
+    </div>    
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -109,6 +109,8 @@
 - https://www.w3schools.com/
 - https://developer.mozilla.org/
 
+# Projects
+- https://codepen.io/michaelphamngo/pen/XWajYKY
 
 # I. Declare variables
 

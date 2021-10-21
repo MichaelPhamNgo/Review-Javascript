@@ -28,7 +28,12 @@
     width: 50px;
     height: 50px;
     display: inline-block;
-    margin-right: 10px;;
+    margin-right: 10px;
+}
+
+.color-picker .card-body .box:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
 }
 
 .blue {
@@ -84,7 +89,30 @@
 }
 
 .display {
-    padding: 10px;
+    padding: 10px;    
+}
+
+.border-blue {    
     border: 1px solid #0d6efd;
     color: #0d6efd;
 }
+
+.border-gray {    
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+
+.border-green {    
+    border: 1px solid #198754;
+    color: #198754;
+}
+
+.border-red {    
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.border-yellow {    
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}   
