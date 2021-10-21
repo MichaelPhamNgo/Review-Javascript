@@ -1,14 +1,11 @@
+## Object and more
 
-
-## VI. Object and more
-
-### VI.1 Create an object
+### Create an object
 
 ***EXAMPLE***
 ```javascript
 //ex1: create an object person on a line
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-console.log(person);		//{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 
 //ex2: create an object person on multiple lines
 var person = {
@@ -17,7 +14,6 @@ var person = {
   age: 50,
   eyeColor: "blue"
 };
-console.log(person);		//{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 
 //ex3: create an empty object and assign properties for that object
 var person = {};
@@ -25,7 +21,6 @@ person.firstName = "John";
 person.lastName = "Doe";
 person.age = 50;
 person.eyeColor = "blue";
-console.log(person);		//{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 
 //ex4: create an empty object and assign properties for that object with new keyword
 var person = new Object();
@@ -33,7 +28,6 @@ person.firstName = "John";
 person.lastName = "Doe";
 person.age = 50;
 person.eyeColor = "blue";
-console.log(person);		//{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 ```
 
 ### VI.2 Access JS object
@@ -46,13 +40,13 @@ var person = {
   age: 50,
   eyeColor: "blue"
 };
-console.log(person.firstName + person.lastName);          //Steve Job
-console.log(person["firstName"] + person["lastName"]);    //Steve Job
+console.log(person.firstName + person.lastName);
+console.log(person["firstName"] + person["lastName"]);
 
 //ex2: access indirectly 
 var fName = "firstName";
 var lName = "lastName";
-console.log(person[fName] + person[lName]);               //Steve Job
+console.log(person[fName] + person[lName]);
 ```
 
 ### VI.3 Add new properties for the object
@@ -68,8 +62,7 @@ var person = {
 person.nationality = "English";
 //or person["nationality"] = "English";
 //or var n = "nationality"; person[n] = "English";
-console.log(person);          //{firstName: "John", lastName: "Doe", age: 50, 
-                              //eyeColor: "blue", nationality: "English"}
+console.log(person);
 ```
 
 ### VI.4 Edit properties for the object
@@ -85,7 +78,7 @@ var person = {
 person.age = 58;
 //or person["age"] = 58;
 //or var a = "age"; person[a] = "58;
-console.log(person);          //{firstName: "John", lastName: "Doe", age: 58, eyeColor: "blue"}
+console.log(person);
 ```
 
 ### VI.5 Delete properties of the object
@@ -103,7 +96,7 @@ var person = {
 delete person.age;
 //or delete person["age"];
 //or var a = "age"; delete person[a];
-console.log(person);          //{firstName: "John", lastName: "Doe", eyeColor: "blue"}
+console.log(person);
 ```
 
 ### VI.6 Copy an object
@@ -123,25 +116,15 @@ var person = {
 
 //ex1: Using three dots
 var x = {...person};
-console.log(x);               //{firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+console.log(x);
 
 //ex2: Using object assign
 var x = Object.assign({}, person);
-console.log(x);               //{firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
-/**
-  * let first = {firstName: 'John'}; let last = {lastName: 'Doe'};
-  * let person = Object.assign(first, last);
-  * console.log(person);	//{firstName: 'John', lastName: 'Doe'}
-  */
-
+console.log(x);
 
 //ex3: Using JSON
 var x = JSON.parse(JSON.stringify(person));
-console.log(x);               //{firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
-/**
-  * JSON.stringify: convert an object to string
-  * JSON.parse: convert text to JS object
-  */
+console.log(x);
 ```
 
 ---
@@ -165,7 +148,7 @@ const object2= {
   h: 2,  
   i: 3  
 };  
-console.log(Object.assign(object1, object2));	//{a:1, b:2, c:3, g: 1, h:2, i: 3}  
+console.log(Object.assign(object1, object2));
 ```
 
 > The Object.defineProperties() method defines new or modifies existing properties directly on an object, and returning the object.
@@ -182,7 +165,7 @@ Object.defineProperties(object1, {
   property1:{  
 value: 44, }  
  });  
-console.log(object1.property1);    	//44  
+console.log(object1.property1);
 ```
 
 > The Object.freeze() method freezes an object that prevents new properties from being added to it. This method prevents the modification of existing property, attributes, and values.
@@ -199,7 +182,7 @@ const object1 = {
 const object2 = Object.freeze(object1);  
 object2.property1 = 33;  
 // Throws an error in strict mode  
-console.log(object2.property1);        	//22  
+console.log(object2.property1);
 ```
 
 > The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
@@ -216,7 +199,7 @@ const object1 = {
   c: false
 };
 
-console.log(Object.keys(object1));         	//["a", "b", "c"] 
+console.log(Object.keys(object1));
 ```
 
 > The Object.values() returns an array which contains the given object's own enumerable property values, in the same order as that provided by a for...in loop.
@@ -232,7 +215,7 @@ const object1 = {
   b: 0,  
   c:false  
 };  
-console.log(Object.values(object1));          	//["Rahul", 0, false]  
+console.log(Object.values(object1));
 ```
 
 > JavaScript Object.entries() method is used to return an array of a given object's own enumerable property [key, value] pairs. The ordering of the properties is the same as that given by looping over the property values of the object manually.
@@ -245,7 +228,7 @@ Object.entries(obj)
 ```javascript
 //ex: get the second property of an object
 const obj = { 10: 'arry', 21: 'barry', 23: 'carry' };  
-console.log(Object.entries(obj)[2]);	//["23", "carry"]  
+console.log(Object.entries(obj)[2]);
 ```
 ---
 
@@ -261,13 +244,13 @@ var person = {
   age: 50,
   eyeColor: "blue"
 };
-console.log(person);          //{firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+console.log(person);
 
 var x = person;
 x.firstName = "Steve";
 x.lastName = "Job";
-console.log(x);               //{firstName: "Steve", lastName: "Job", age: 50, eyeColor: "blue"}
-console.log(person);          //{firstName: "Steve", lastName: "Job", age: 50, eyeColor: "blue"}
+console.log(x);
+console.log(person);
 ```
 
 ***Explain:*** the object x **is not a copy** of person. Both x and person are the same object. If changing person object, x is also changed, and so on.
@@ -281,43 +264,12 @@ for(let index in object) {
 }
 ```
 
-***EXAMPLE***
-```javascript
-var person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-};
-
-//ex: print properties in an object
-for(let index in person) {
-  console.log(key, ":" , person[index]);
-}
-```
-
 ### VI.9 for...of
 
 ***SYNTAX***
 ```javascript
 for(let [key, value] of object) {
   ...do something
-}
-```
-
-***EXAMPLE***
-
-```javascript
-var person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-};
-
-//ex: print properties in an object with for..of
-for(var [key, value] of Object.entries(person)) {
-  console.log(key, ":" , value);
 }
 ```
 
@@ -328,27 +280,6 @@ for(var [key, value] of Object.entries(person)) {
 for(let [key, value] of object) {
   ...do something
 }
-```
-
-***EXAMPLE***
-
-```javascript
-
-//forEach
-//Method 1
-Object.keys(person).forEach(function(key){
-  console.log(key, ":" , person[key]);
-})
-
-//Method 2
-Object.values(person).forEach(function(value){
-  console.log(value);
-})
-
-//Method 3
-Object.entries(person).forEach(function([key, value]){
-  console.log(key, ":" , value);
-})
 ```
 
 ### VI.11 Nested objects and function in an object
@@ -367,13 +298,13 @@ var person = {
   }
 }
 
-console.log(person.car.car2);                //BMW
-console.log(person["car"].car2);             //BMW
-console.log(person.car["car2"]);             //BMW
-console.log(person["car"]["car2"]);          //BMW
+console.log(person.car.car2);
+console.log(person["car"].car2);
+console.log(person.car["car2"]);
+console.log(person["car"]["car2"]);
 var o = "car";
 var o2 = "car2";
-console.log(person[o][o2]);                  //BMW
+console.log(person[o][o2]);
 ```
 
 > create a method to an object
@@ -389,7 +320,7 @@ var person = {
     return this.firstName + " " + this.lastName;
   }
 }
-console.log(person.fullName());                //John Doe
+console.log(person.fullName());
 
 //ex2: use get keyword to create fullName method
 var person = {
@@ -400,7 +331,7 @@ var person = {
     return this.firstName + " " + this.lastName;
   }
 }
-console.log(person.fullName);                //John Doe
+console.log(person.fullName);
 
 //ex3: use set keyword to set value age for person object
 var person = {
@@ -415,7 +346,7 @@ var person = {
   }
 }
 person.pAge = 50;
-console.log(person.pDetail);                //John Doe, age: 50
+console.log(person.pDetail);
 ```
 
  ### VI.12 JSON.stringify
@@ -434,7 +365,7 @@ var person = {
   lastName:"Doe",
   age:30  
 }
-console.log(JSON.stringify(person));        //{"firstName":"John","lastName":"Doe","age":30} 
+console.log(JSON.stringify(person));
 ```
 
 ---
@@ -450,7 +381,7 @@ var person = {
   age:30,
   fullName: function() { return this.firstName + " " + this.lastName; }
 }
-console.log(JSON.stringify(person));        //{"firstName":"John","lastName":"Doe","age":30} !!! doesn't show fullName
+console.log(JSON.stringify(person));
 
 //To fix it
 var person = {
@@ -460,8 +391,7 @@ var person = {
   fullName: function() { return this.firstName + " " + this.lastName; }
 }
 person.fullName = person.fullName.toString();
-console.log(JSON.stringify(person));      //{"firstName":"John","lastName":"Doe","age":30,
-                                          //"fullName":"function() { return this.firstName + \" \" + this.lastName; }"}
+console.log(JSON.stringify(person));
 ```
 
 > convert an object to an array
@@ -474,7 +404,7 @@ var person = {
   lastName:"Doe",
   age:30  
 }
-console.log(Object.values(person))          //["John", "Doe", 30]
+console.log(Object.values(person));
 ```
 ---
  
@@ -499,12 +429,10 @@ function Person(first, last, age, eye) {
 }
 
 var myFather = new Person("John", "Doe", 50, "blue");
-console.log(myFather);                      //Person {firstName: 'John', lastName: 'Doe', age: 50, 
-                                            //eyeColor: 'blue', fullName: ƒ}
-console.log(myFather.fullName());           //John Doe
-
+console.log(myFather);
+console.log(myFather.fullName());
 myFather.changeName("Steve", "Job");
-console.log(myFather.fullName());           //Steve Job
+console.log(myFather.fullName());
  ```
  
 > add a new property to an existing object constructor
@@ -519,7 +447,9 @@ function Person(first, last, age, eyecolor) {
   this.eyeColor = eyecolor;
 }
 ```
+
 We ***cannot*** add a new property to the object constructor as the following coding
+
 ```javascript
 Person.nationality = "English";
 Person.fullName = function() {
@@ -532,4 +462,119 @@ Person.prototype.nationality = "English";
 Person.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
+```
+
+***CHECK KNOWLEDGE***
+```javascript
+//ex1: show a string 'John Doe' by 3 ways
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex2: add English nationality for person John Doe by 3 ways
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex3: change age for person John Doe by 3 ways
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex4: delete age property of person by 3 ways
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex5: Copy a new object and change firstName to be Michael and 
+//lastName to be Pham, make sure the old object doesn't changed by 3 ways
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex6: Merge two objects
+const object1 = {  
+  a: 1,  
+  b: 2,  
+  c: 3  
+};  
+const object2= {  
+  g: 1,  
+  h: 2,  
+  i: 3  
+};
+
+//ex7: Define a new object = {property : 44}
+
+//ex8: get keys of an object
+const obj = {a: 'somestring', b: 42, c: false};
+
+//ex9: get values of an object
+const obj = {a: 'somestring', b: 42, c: false};
+
+//ex10: get pair key and value of an object
+const obj = { 10: 'arry', 21: 'barry', 23: 'carry' };  
+
+//ex11:
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+console.log(person);          //?
+
+var x = person;
+x.firstName = "Steve";
+x.lastName = "Job";
+console.log(x);               //?
+console.log(person);
+
+//ex12: use for..in, for..of, forEach (Object.keys, Object.values, Object.entries) to print data an object
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+//ex13: create fullName method in person object
+var person = {
+  firstName:"John",
+  lastName:"Doe",
+  age:30  
+}
+
+//ex14: use get keyword to create fullName method
+var person = {
+  firstName:"John",
+  lastName:"Doe",
+  age:30  
+}
+
+//ex14: use set keyword to set value age for person object
+var person = {
+  firstName:"John",
+  lastName:"Doe",
+  age:30
+}
+
+//ex15: create an object person(firstName, lastName, age, eyeColor, fullName) with object constructor
+
+//ex16: assgin English nationality for person 
 ```
