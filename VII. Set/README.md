@@ -128,6 +128,6 @@ var letters = new Set(["a","b","c"]);
 //ex5: print all elements of a set using pair of keys and values
 var letters = new Set(["a","b","c"]);
 
-//ex: print all elements of a set using forEach
+//ex6: print all elements of a set using forEach
 var letters = new Set(["a","b","c"]);
 ```
