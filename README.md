@@ -265,7 +265,6 @@ console.log(x);                 //10
 }
 console.log(x);                 //2
 ```
----
 
 # II. Prefix and Postfix
 ## II.1 Prefix
@@ -335,7 +334,6 @@ a = a-- + ++a - a++                           //4
 var a = 4;
 a = a--*2 + ++a*2 - ++a*2                     //6
 ```
----
 
 # III. String and String Methods
 
@@ -497,8 +495,6 @@ console.log(str.slice(-12))                     //Banana, Kiwi
 - The index from left to right, start = 0 and end = length - 1
 - The index from right to left, start = -1 and end = length - 2
 - end >= length of the string, return an extracted string from start to end of the string
----
-
 
 ## III.6 substring
 > Extracts parts of a string.
@@ -545,7 +541,6 @@ console.log(str.substring(-12, -6));   //empty string
 - If start < 0, then start = 0
 - If start < end, then swith start and end
 - end >= length of the string, return an extracted string from start to end of the string
----
 
 ## III.7 substr
 > Extracts parts of a string.
@@ -593,8 +588,7 @@ console.log(str.substr(-4))                     //Kiwi
 - The index from left to right, start = 0 and end = length - 1
 - The index from right to left, start = -1 and end = length - 2
 - end >= length of the string, return an extracted string from start to end of the string
-- length <= 0, return empty string <br/>
----
+- length <= 0, return empty string
 
 ## III.8 replace
 > Searches a string for a specified value. And, returns a new string where the specified values are replaced.
@@ -639,7 +633,7 @@ console.log(str.replace('JS','JavaScript'));    //JavaScript will, JS will rock 
 | 1 |   g   | Find all matches | var str = "JS will, JS will rock you!"; | str.replace(/JS/g, "Javascript");  |Javascript will, Javascript will rock you!|
 | 2 |   i   | Matches case-insensitive  | var str = "JS will, js will rock you!"; | str.replace(/JS/gi, "Javascript");  |Javascript will, Javascript will rock you!|
 | 3 |   \|   | Multiple replacements | var str = "Mr Blue has a blue house and a blue car"; | str.replace(/blue\|house\|car/gi, function (x) { return x.toUpperCase();});  |Mr BLUE has a BLUE HOUSE and a BLUE CAR.|
----
+
 
 ## III.9 charAt
 > Returns the character at a specified index in a string.
@@ -681,7 +675,6 @@ console.log(str[50]);               //undefined
 - If index < 0 and using [], then return undefined
 - If index > length and using charAt, then return empty
 - If index > length and [], then return undefined
----
 
 ## III.10 indexOf
 > Returns the position of the first occurrence of a specified value in a string.
@@ -1025,7 +1018,6 @@ console.log(str1.localeCompare(str2));                //1
 'a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I',
 'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R',
 's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z'
----
 
 ## III.19 repeat
 > Make a new string by copying a string count times.
@@ -1225,7 +1217,6 @@ console.log("S" * 10);              //NaN
     <td>Represents a "Not-a-Number" value</td>
   </tr> 
 </table>
----
 
 ## IV.1 isNaN
 > Determines whether a value is an illegal number.
@@ -1570,7 +1561,6 @@ var myArray = [
   ["Mon","Tue","Wed","Thur","Fri","Sat","Sun"]
 ];
 ```
----
 
 ## V.6 length
 > Length of the array
@@ -2838,7 +2828,6 @@ Object.entries(obj)
 const obj = { 10: 'arry', 21: 'barry', 23: 'carry' };  
 console.log(Object.entries(obj)[2]);	//["23", "carry"]  
 ```
----
 
 ### VI.7 JS objects are mutable. 
 > If an object is mutable, modifying the copy also modifies the original. In JavaScript numbers, strings, null, undefined and booleans are primitive types which are immutable. Objects, arrays, functions, classes, maps, and sets are mutable.
@@ -3067,7 +3056,6 @@ var person = {
 }
 console.log(Object.values(person))          //["John", "Doe", 30]
 ```
----
  
 ### VI.13 JS Object constructor
 > create an object constructor
@@ -3569,7 +3557,6 @@ try {
     </td>
   </tr>
 </table>
----
 
 ## X. Scope, Closure and strict mode
 ### X.1 Scope 
@@ -3619,8 +3606,8 @@ function showX(){
 console.log(x);             //2
 ```
 
-***NOTE***
 ---
+***NOTE***
 - With let, const, var, we are able to access from the inside code block
 ***EXAMPLE***
 ```javascript
@@ -3653,7 +3640,6 @@ let x = 2;
   }    
 }
 ```
----
 
 ### X.2 Closure 
 > A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
@@ -3676,8 +3662,8 @@ console.log(c());         //2
 console.log(c());         //3
 ```
 
-***NOTE***
 ---
+***NOTE***
 - Show private feature
 ***EXAMPLE***
 ```javascript
@@ -3722,13 +3708,14 @@ function createApp() {
 //> app.add({firstName:"Bill", lastName:"Gate"})  
 //> app.get(1)                                      //{firstName: 'Steve', lastName: 'Job'}
 ```
----
+
 ### X.3 Strict mode
 > Prevent unsafe codes or potential errors when using global variables
 >   must be used var, let, const to declare a new variable
 >   cannot use private, protected, etc
 >   cannot use the same properties in a function
 >   cannot use a function out of a block code
+
 ***EXAMPLE***
 ```javascript
 //ex1: must be used var, let, const to declare a new variable
@@ -3761,42 +3748,52 @@ console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
 ```
 
 ## XI. Hoisting
-:triangular_flag_on_post: Features
 > In JS, a variable can be declared after it has been used. Var, let, const, and function can be hoisted, but let and const are in Temporal Dead Zone.
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 x = 5;
-console.log(x);             //output: 5
+console.log(x);             //5
 var x;
 
-//ex
+//ex2
 var x;
-console.log(x);             //output: undefined
+console.log(x);             //undefined
 x = 5;
 
-//ex
+//ex3
 x = 5;
-console.log(x);             //ouput: Uncaught ReferenceError: Cannot access 'x' before initialization because x is in Temporal Dead Zone
-let x;
+console.log(x);             //Uncaught ReferenceError: Cannot access 'x' before initialization 							
+let x;						//because x is in Temporal Dead Zone, we cannot use x to assign 5
 
-//ex
+//ex4
 x = 5;
-console.log(x);             //ouput: Uncaught SyntaxError: Missing initializer in const declaration  because x is in Temporal Dead Zone
+console.log(x);             //Uncaught SyntaxError: Missing initializer in const declaration because x is in Temporal Dead Zone
 const x;
 
-//ex
-console.log(sum(2,3));      //ouput: 5
+//ex5
+greeting();
+function greeting() {
+	console.log("Hello World!");
+}
+
+//ex6
+console.log(sum(2,3));      //5
 function sum(a, b) {
   return a + b;
 }
 ```
-***NOTE***
+
 ---
-- Misunderstood
+***NOTE***
+> make us Misunderstood
+
+***EXAMPLE***
 ```javascript
 //ex
 let c = counter();
-console.log(c());           //output: 1
+console.log(c());           //1
 function counter() {
   let i = 0;
   return increase;
@@ -3805,103 +3802,93 @@ function counter() {
   }
 }
 ```
----
+
 ## XII. Arrow Function and IIFE
 ### XII.1 Arrow Function
-Allow us to write shorter function syntax:
-:triangular_flag_on_post: without parameters
+> Allow us to write shorter function syntax
+
+***EXAMPLE***
 ```javascript
+//ex1: without parameters
 function hello() {
   return "Hello World!!!";
 }
 console.log(hello());
-
 //or
-
 hello = function() {
   return "Hello World!!!";
 }
 console.log(hello());
-
 //or 
-
 hello = () => {
   return "Hello World!!!";
 }
 console.log(hello());
-
 //or 
-
 hello = () => "Hello World!!!";
 console.log(hello());
-```
 
-:triangular_flag_on_post: with parameters
-```javascript
+//ex2: with parameters
 function hello(val) {
   return val + " World!!!";
 }
 console.log(hello("Hello"));
-
 //or
-
 hello = function(val) {
   return val + " World!!!";
 }
 console.log(hello("Hello"));
-
 //or 
-
 hello = (val) => {
   return val + " World!!!";
 }
 console.log(hello("Hello"));
-
 //or 
-
 hello = (val) => val + " World!!!";
 console.log(hello("Hello"));
-
 //or 
-
 hello = val => val + " World!!!";
 console.log(hello("Hello"));
 ```
 
-:triangular_flag_on_post: More Examples
+---
+***MORE***
 ```javascript
-//ex
+//ex1: Create a new object
 myObject = (a, b) => ({a : a, b : b});
 
-//ex
+//ex2: Show Hello World
 logger = log => console.log(log);
 logger("Hello World!!!");
 ```
 
 ## XII.2 IIFE (Immediately Invoked Function Expression)
 > A function is excuted after creation
+
+***EXAMPLE***
 ```javascript
 ;(function(a, b){
       console.log(a + b);
-})(10, 20);                                //output: 30
-
+})(10, 20);                                //30
 //or
-
-;((a,b) => console.log(a + b))(10, 20);    //output: 30
+;((a,b) => console.log(a + b))(10, 20);    //30
 ```
-
-***NOTE***
 ---
-- Cannot call the outside of the IIFE function
+***NOTE***
+> Cannot call the outside of the IIFE Function
+
+***EXAMPLE***
 ```javascript
 ;(function myFunction(){
   console.log("Hello World");
 })();
-myFunction();                             //output: Uncaught ReferenceError: myFunction is not defined
+myFunction();                             //Uncaught ReferenceError: myFunction is not defined
 ```
-- Show private feature
+
+> Show private feature
+
+***EXAMPLE***
 ```javascript
-//ex
 //Assuming we want to add, edit, or delete a person in a people array
 const app = {
     people : [],    
@@ -3917,7 +3904,7 @@ const app = {
 }
 //but if we assign app.people = null, and we add a new person to array people
 //> app.people = null
-//> app.add({firstName:"John", lastName:"Doe"})       //output: Uncaught TypeError: Cannot read properties of null (reading 'push')
+//> app.add({firstName:"John", lastName:"Doe"})       //Uncaught TypeError: Cannot read properties of null (reading 'push')
 
 //To solve this problem, we use IIFE
 const app = (function() {
@@ -3941,15 +3928,16 @@ const app = (function() {
 //> app.add({firstName:"John", lastName:"Doe"})       
 //> app.add({firstName:"Steve", lastName:"Job"})       
 //> app.add({firstName:"Bill", lastName:"Gate"})  
-//> app.get(1)                                      //output: {firstName: 'Steve', lastName: 'Job'}
+//> app.get(1)                                      //{firstName: 'Steve', lastName: 'Job'}
 ```
----
 
 ## XIII. Callback, Promise, Async/Await
 ### XIII.1 Callback
 > A callback function is a function passed into another function as an argument.
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1: Show Hello World using callback function
 function myFunction(param) {
   param("Hello World!!!");
 }
@@ -3958,9 +3946,9 @@ function myCallback(value) {
   console.log(value);
 }
 
-myFunction(myCallback);         //output: Hello World
+myFunction(myCallback);         //Hello World
 
-//ex
+//ex2: Calculate using callback functions
 function Calculator(param) {
   console.log(param(10, 2));
 }
@@ -3981,10 +3969,10 @@ function division(a, b) {
   return a / b;
 }
 
-Calculator(multiplication);         //ouput: 20
-Calculator(addition);               //ouput: 12
-Calculator(substraction);           //ouput: 8
-Calculator(division);               //ouput: 5
+Calculator(multiplication);         //20
+Calculator(addition);               //12
+Calculator(substraction);           //8
+Calculator(division);               //5
 ```
 
 ### XIII.2 Promise 
@@ -4033,7 +4021,7 @@ makeBurger(function (burger) => {
 ```
 ***Warning:*** meet ***the callback hell*** which is multiple functions are asynchronous. To solve the callback hell issue, using promises.
 
-:triangular_flag_on_post: Promise syntax
+***SYNTAX***
 ```javascript
 let promise = new Promise(              //Pending
   //Excutor
@@ -4048,7 +4036,8 @@ promise
   .finally(function(){
   })
 ```
-:triangular_flag_on_post: An example about promise
+
+***EXAMPLE***
 ```javascript
 //ex
 let success = true;
@@ -4074,16 +4063,17 @@ promise
   });
   
 /**
-  * output:
   * if success = true, the output is Handle a successful action
   *                                     Done.
   * if success = false, the output is Error: Handle an error action
 *                                       Done.
   */
 ```
-:triangular_flag_on_post: Promise chain
+
+#### Promise chain
+***EXAMPLE***
 ```javascript
-//ex
+//ex: print 1 2 3 4 Done in every one second
 let promise = new Promise(function(resolve, reject){
   resolve(1);
 });
@@ -4124,11 +4114,13 @@ promise
       console.log("Done");
     }, 5000);
   });
-//output: 1 2 3 4 Done
+//1 2 3 4 Done
 ```
-:triangular_flag_on_post: Nested promise
+
+#### Nested promise
+***EXAMPLE***
 ```javascript
-//ex
+//ex: print 1 2 3 4 Done in every one second
 let promise = new Promise(function(resolve){
   resolve(1);
 });
@@ -4172,11 +4164,13 @@ promise
   .finally(function(){
     console.log("Done");
   });
-//output: 1 2 3 4 Done
+//1 2 3 4 Done
 ```
-:triangular_flag_on_post: Shorter nested promise
+
+#### Shorter nested promise
+***EXAMPLE***
 ```javascript
-//ex
+//ex: print 1 2 3 4 Done in every one second
 function sleep(value, ms) {
   return new Promise(function(resolve){    
     setTimeout(function() {
@@ -4208,13 +4202,15 @@ sleep(1, 1000)
   .finally(function(){
     console.log("Done");
   });
-//output: 1 2 3 4 Done
+//1 2 3 4 Done
 ```
-:triangular_flag_on_post: Promise methods
 
-:heavy_check_mark: Promise resolve
+#### Promise methods
+> Promise resolve
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex: promise resolve
 let promise = new Promise(function(resolve){
   resolve(1);
 });
@@ -4231,9 +4227,12 @@ Promise.resolve(1)
     console.log("success", success)
 });
 ```
-:heavy_check_mark: Promise reject
+
+> Promise reject
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex: promise reject
 let promise = new Promise(function(resolve, reject){
   reject(1);
 });
@@ -4254,9 +4253,11 @@ Promise.reject(1)
 });
 ```
 
-:heavy_check_mark: Promise all
+> Promise all
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex: promise all
 let promise_1 = new Promise(function(resolve){
   setTimeout(function(){resolve([1, 2])}, 1000);
 })
@@ -4268,49 +4269,55 @@ Promise.all([promise_1, promise_2])
 .then(function(result){
   console.log(result[0].concat(result[1]));
 })
-//output: [1,2,3,4,5]
+//[1,2,3,4,5]
 ```
 ## XIV. ECMAScript 6
 ### XIV.1 Template literals
+> Use back-ticks (``) rather than the quotes ("") to define a string
 
-Use back-ticks (``) rather than the quotes ("") to define a string
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 var text = `Hello World!`;
 
-//ex
+//ex2
 var text =
 `The quick
 brown fox
 jumps over
 the lazy dog`;
 
-//ex
+//ex3
 var firstName = "John";
 var lastName = "Doe";
 var text = `Welcome ${firstName}, ${lastName}!`;
-console.log(text);                //output: Welcome John, Doe!
+console.log(text);                	//Welcome John, Doe!
 
-//ex
+//ex4
 var price = 10;
 var VAT = 0.25;
 var total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
-console.log(total);                //output: Total: 12.50
+console.log(total);                	//Total: 12.50
 ```
+
 ### XIV.2 Default parameter
-Assign a default value to the parameter
+> Assign a default value to the parameter
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 function sum(x = 1, y = 2) {
   console.log("Total: ", x + y);
 }
 
-sum();              //output: 3
+sum();              				//3
 ```
 ### XIV.3 Enhanced object literals
-Shorter way to define an object
+> Shorter way to define an object
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 var firstName = "John";
 var lastName = "John";
 var person = {
@@ -4333,7 +4340,7 @@ var person = {
   }
 }
 
-//ex
+//ex2
 var varName = 'first';
 function computeNameType( type ) {
   return type + 'Name';
@@ -4344,10 +4351,13 @@ var person = {
   [ computeNameType( 'last' ) ]: 'Smith'
 };
 ```
+
 ### XIV.4 Destructuring
-:triangular_flag_on_post: Destructing arrays
+> Destructing arrays
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 var vehicles = ['mustang', 'f-150', 'expedition'];
 
 //old way
@@ -4357,7 +4367,7 @@ var suv = vehicles[2];
 //new way
 var [car, truck, suv] = vehicles;
 
-//ex
+//ex2
 function calculate(a, b) {
   var add = a + b;
   var subtract = a - b;
@@ -4368,10 +4378,8 @@ function calculate(a, b) {
 }
 
 var [add, subtract, multiply, divide] = calculate(4, 7);
-```
-:triangular_flag_on_post: Destructing objects
-```javascript
-//ex
+
+//ex3
 var vehicleOne = {
   brand: 'Ford',
   model: 'Mustang',
@@ -4392,21 +4400,24 @@ function myVehicle({type, color, brand, model}) {
   var message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
 }
 ```
+
 ### XIV.5 Spread Operator
-The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+> The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+***EXAMPLE***
 ```javascript
-//ex
+//ex1
 var numbersOne = [1, 2, 3];
 var numbersTwo = [4, 5, 6];
 var numbersCombined = [...numbersOne, ...numbersTwo];
-console.log(numbersCombined)                //output: [1, 2, 3, 4, 5, 6]
+console.log(numbersCombined)                //[1, 2, 3, 4, 5, 6]
 
-//ex
+//ex2
 var numbers = [1, 2, 3, 4, 5, 6];
 var [one, two, ...rest] = numbers;
-console.log(rest);                          //output: 3, 4, 5, 6
+console.log(rest);                          //3, 4, 5, 6
 
-//ex
+//ex3
 var myVehicle = {
   brand: 'Ford',
   model: 'Mustang',
@@ -4422,6 +4433,7 @@ var updateMyVehicle = {
 var myUpdatedVehicle = {...myVehicle, ...updateMyVehicle};
 console.log(myUpdatedVehicle);
 ```
+
 ### XIV.6 Modules 
 [Read More](https://javascript.info/modules-intro)
 
