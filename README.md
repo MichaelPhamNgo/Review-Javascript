@@ -36,67 +36,96 @@
   - [IV.3 toFixed](#iv3-tofixed)
   - [IV.4 toPrecision](#iv4-toprecision)
   - [IV.5 Convert variables to numbers](#iv5-convert-variables-to-numbers)
-- [V. Array and Array Methods](#v-array-and-array-methods)
-  - [V.1 Create an array](#v1-create-an-array)
-  - [V.2 for](#v2-for)
-  - [V.3 for..in](#v3-forin)
-  - [V.4 for..of](#v4-forof)
-  - [V.5 forEach](#v5-foreach)
-  - [V.6 length](#v6-length)
-  - [V.7 toString](#v7-tostring)
-  - [V.8 join](#v8-join)
-  - [V.9 pop](#v9-pop)
-  - [V.10 push](#v10-push)
-  - [V.11 shift](#v11-shift)
-  - [V.12 unshift](#v12-unshift)
-  - [V.13 splice](#v13-splice)
-  - [V.14 concat](#v14-concat)
-  - [V.15 slice](#v15-slice)
-  - [V.16 Add elements to an array](#v16-add-elements-to-an-array)
-  - [V.17 Delete elements from an array](#v17-delete-elements-from-an-array)
-  - [V.18 Delete an element by using the JavaScript operator delete](#v18-delete-an-element-by-using-the-javascript-operator-delete)
-  - [V.19 Sort](#v19-sort)
-  - [V.20 Find min, max](#v20-find-min-max)
-  - [V.21 forEach, reduce, indexOf, find](#v21-foreach-reduce-indexof-find)
-  - [V.22 every, some, includes](#v22-every-some-includes)
-  - [V.23 filter, map](#v23-filter-map)
-- [VI. Object and more](#vi-object-and-more)
-  - [VI.1 Create an object](#vi1-create-an-object)
-  - [VI.2 Access JS object](#vi2-access-js-object)
-  - [VI.3 Add new properties for the object](#vi3-add-new-properties-for-the-object)
-  - [VI.4 Edit properties for the object](#vi4-edit-properties-for-the-object)
-  - [VI.5 Delete properties of the object](#vi5-delete-properties-of-the-object)
-  - [VI.6 Copy an object](#vi6-copy-an-object)
-  - [VI.7 JS objects are mutable.](#vi7-js-objects-are-mutable)
-  - [VI.8 for...in](#vi8-forin)
-  - [VI.9 for...of](#vi9-forof)
-  - [VI.10 forEach](#vi10-foreach)
-  - [VI.11 Nested objects and function in an object](#vi11-nested-objects-and-function-in-an-object)
-  - [VI.12 JSON.stringify](#vi12-jsonstringify)
-  - [VI.13 JS Object constructor](#vi13-js-object-constructor)
-- [VII. Set and Set methods](#vii-set-and-set-methods)
-  - [VII.1 Create a set](#vii1-create-a-set)
-  - [VII.2 Add an element in a set](#vii2-add-an-element-in-a-set)
-  - [VII.3 Delete an element in a set](#vii3-delete-an-element-in-a-set)
-  - [VII.4 Set methods](#vii4-set-methods)
-- [VIII. Map and Map methods](#viii-map-and-map-methods)
-  - [VIII.1 Create a map](#viii1-create-a-map)
-  - [VIII.2 Add an element in a map](#viii2-add-an-element-in-a-map)
-  - [VIII.3 Get an element in a map](#viii3-get-an-element-in-a-map)
-  - [VIII.4 Delete an element in a map](#viii4-delete-an-element-in-a-map)
-  - [VIII.5 Map methods](#viii5-map-methods)
-- [IX. try catch](#ix-try-catch)
-- [X. Scope, Closure and strict mode](#x-scope-closure-and-strict-mode)
-  - [X.1 Scope](#x1-scope)
-  - [X.2 Closure](#x2-closure)
-  - [X.3 Strict mode](#x3-strict-mode)
-- [XI. Hoisting](#xi-hoisting)
+- [V. Math and Math Methods](#v-math-and-math-methods)
+  - [V.1 round](#v1-round)
+  - [V.2 ceil](#v2-ceil)
+  - [V.3 floor](#v3-floor)
+  - [V.4 trunc](#v4-trunc)
+  - [V.5 sign](#v5-sign)
+  - [V.6 pow](#v6-pow)
+  - [V.7 sqrt](#v7-sqrt)
+  - [V.8 abs](#v8-abs)
+  - [V.9 sin](#v9-sin)
+  - [V.10 cos](#v10-cos)
+  - [V.11 min](#v11-min)
+  - [V.12 max](#v12-max)
+  - [V.13 random](#v13-random)
+  - [V.14 log](#v14-log)
+  - [V.15 log2](#v15-log2)
+  - [V.16 log10](#v16-log10)
+- [VI. Array and Array Methods](#vi-array-and-array-methods)
+  - [VI.1 Create an array](#vi1-create-an-array)
+  - [VI.2 for](#vi2-for)
+  - [VI.3 for..in](#vi3-forin)
+  - [VI.4 for..of](#vi4-forof)
+  - [VI.5 forEach](#vi5-foreach)
+  - [VI.6 length](#vi6-length)
+  - [VI.7 toString](#vi7-tostring)
+  - [VI.8 join](#vi8-join)
+  - [VI.9 pop](#vi9-pop)
+  - [VI.10 push](#vi10-push)
+  - [VI.11 shift](#vi11-shift)
+  - [VI.12 unshift](#vi12-unshift)
+  - [VI.13 splice](#vi13-splice)
+  - [VI.14 concat](#vi14-concat)
+  - [VI.15 slice](#vi15-slice)
+  - [VI.16 Add elements to an array](#vi16-add-elements-to-an-array)
+  - [VI.17 Delete elements from an array](#vi17-delete-elements-from-an-array)
+  - [VI.18 Delete an element by using the JavaScript operator delete](#vi18-delete-an-element-by-using-the-javascript-operator-delete)
+  - [VI.19 Sort](#vi19-sort)
+  - [VI.20 Find min, max](#vi20-find-min-max)
+  - [VI.21 forEach, reduce, indexOf, find](#vi21-foreach-reduce-indexof-find)
+  - [VI.22 every, some, includes](#vi22-every-some-includes)
+  - [VI.23 filter, map](#vi23-filter-map)
+- [VII. Object and more](#vii-object-and-more)
+  - [VII.1 Create an object](#vii1-create-an-object)
+  - [VII.2 Access JS object](#vii2-access-js-object)
+  - [VII.3 Add new properties for the object](#vii3-add-new-properties-for-the-object)
+  - [VII.4 Edit properties for the object](#vii4-edit-properties-for-the-object)
+  - [VII.5 Delete properties of the object](#vii5-delete-properties-of-the-object)
+  - [VII.6 Copy an object](#vii6-copy-an-object)
+  - [VII.7 JS objects are mutable.](#vii7-js-objects-are-mutable)
+  - [VII.8 for...in](#vii8-forin)
+  - [VII.9 for...of](#vii9-forof)
+  - [VII.10 forEach](#vii10-foreach)
+  - [VII.11 Nested objects and function in an object](#vii11-nested-objects-and-function-in-an-object)
+  - [VII.12 JSON.stringify](#vii12-jsonstringify)
+  - [VII.13 JS Object constructor](#vii13-js-object-constructor)
+- [VIII. Set and Set methods](#viii-set-and-set-methods)
+  - [VIII.1 Create a set](#viii1-create-a-set)
+  - [VIII.2 Add an element in a set](#viii2-add-an-element-in-a-set)
+  - [VIII.3 Delete an element in a set](#viii3-delete-an-element-in-a-set)
+  - [VIII.4 size](#viii4-size)
+  - [VIII.5 has](#viii5-has)
+  - [VIII.6 clear](#viii6-clear)
+  - [VIII.7 for](#viii7-for)
+  - [VIII.8 forEach](#viii8-forEach)
+- [IX. Map and Map methods](#ix-map-and-map-methods)
+  - [IX.1 Create a map](#ix1-create-a-map)
+  - [IX.2 Add an element in a map](#ix2-add-an-element-in-a-map)
+  - [IX.3 Get an element in a map](#ix3-get-an-element-in-a-map)
+  - [IX.4 Delete an element in a map](#ix4-delete-an-element-in-a-map)
+  - [IX.5 size](#ix5-size)
+  - [IX.6 has](#ix6-has)
+  - [IX.7 clear](#ix7-clear)
+  - [IX.8 for](#ix8-for)
+  - [IX.9 forEach](#ix9-foreach)
+- [X. try catch and Unit test](#x-try-catch-and-unit-test)
+  - [X.1 try catch finally](#x1-try-catch-finally)
+  - [X.2 throw](#x2-throw)
+  - [X.3 Unit test](#x3-unit-test)
+- [XI. Scope, Closure, Strict Mode, and Hoisting](#x-scope-closure-and-strict-mode)
+  - [XI.1 Scope](#x1-scope)
+  - [XI.2 Closure](#x2-closure)
+  - [XI.3 Strict mode](#x3-strict-mode)
+  - [XI.4 Hoisting](#xi-hoisting)
 - [XII. Arrow Function and IIFE](#xii-arrow-function-and-iife)
   - [XII.1 Arrow Function](#xii1-arrow-function)
   - [XII.2 IIFE (Immediately Invoked Function Expression)](#xii2-iife-immediately-invoked-function-expression)
-- [XIII. Callback, Promise, Async/Await](#xiii-callback-promise-asyncawait)
+- [XXIII. Callback, Promise, Async/Await](#xiii-callback-promise-asyncawait)
   - [XIII.1 Callback](#xiii1-callback)
   - [XIII.2 Promise](#xiii2-promise)
+  - [XIII.3 Asyn/Await]
 - [XIV. ECMAScript 6](#xiv-ecmascript-6)
   - [XIV.1 Template literals](#xiv1-template-literals)
   - [XIV.2 Default parameter](#xiv2-default-parameter)
@@ -104,6 +133,9 @@
   - [XIV.4 Destructuring](#xiv4-destructuring)
   - [XIV.5 Spread Operator](#xiv5-spread-operator)
   - [XIV.6 Modules](#xiv6-modules)
+- [XVII. HTML DOM and jQuery](xvi-unit-test)
+- [XVIII. AJAX, JSON, APIs](xvi-unit-test)
+- [XIX. JS Graphic]
 # References
 - https://fullstack.edu.vn/
 - https://www.w3schools.com/
@@ -1446,9 +1478,247 @@ console.log(parseFloat("10 years"));           //10
 console.log(parseFloat("years 10"));           //NaN
 ```
 
-# V. Array and Array Methods
+# V. Math and Math Methods
+<table>  
+  <tr>
+    <td>Property</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Math.PI</td>
+    <td>Returns a Pi number</td>
+  </tr>   
+  <tr>
+    <td>Math.SQRT2</td>
+    <td>Returns the square root of 2</td>
+  </tr> 
+</table>
 
-## V.1 Create an array
+## V.1 round
+> Returns the nearest integer.
+
+***SYNTAX***
+```javascript
+Math.round(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.round(4.9);    //5
+Math.round(4.7);    //5
+Math.round(4.4);    //4
+Math.round(4.2);    //4
+Math.round(-4.2);   //-4
+```
+
+## V.2 ceil
+> Returns the value of x rounded up to its nearest integer.
+
+***SYNTAX***
+```javascript
+Math.ceil(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.ceil(4.7);     //5 
+Math.ceil(-4.2);    //-4
+Math.ceil(4.4);     //5
+Math.ceil(4.2);     //5 
+Math.ceil(4.9);     //5 
+```
+
+## V.3 floor
+> Returns the value of x rounded down to its nearest integer.
+
+***SYNTAX***
+```javascript
+Math.floor(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.floor(4.9);    //4 
+Math.floor(4.7);    //4 
+Math.floor(4.4);    //4 
+Math.floor(4.2);    //4 
+Math.floor(-4.2);   //-5
+```
+
+## V.4 trunc
+> Returns the integer part of x.
+
+***SYNTAX***
+```javascript
+Math.trunc(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.trunc(4.9);    //4
+Math.trunc(4.7);    //4
+Math.trunc(4.4);    //4
+Math.trunc(4.2);    //4
+Math.trunc(-4.2);   //-4
+```
+
+## V.5 sign
+> Returns if x is negative, null or positive.
+
+***SYNTAX***
+```javascript
+Math.sign(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.sign(-4);    //-1
+Math.sign(0);     //0
+Math.sign(4);     //1
+```
+
+## V.6 pow
+> Returns the value of x to the power of y.
+
+***SYNTAX***
+```javascript
+Math.pow(x, y)
+```
+
+***Example***
+```javascript
+//ex
+Math.pow(8, 2);   //64
+```
+
+## V.7 sqrt
+> Returns the square root of x.
+
+***SYNTAX***
+```javascript
+Math.sqrt(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.sqrt(64);    //8
+```
+
+## V.8 abs
+> Returns the absolute (positive) value of x.
+
+***SYNTAX***
+```javascript
+Math.abs(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.abs(-4.7);   //4.7
+```
+
+## V.9 sin
+> Returns the sine (a value between -1 and 1) of the angle x (given in radians).
+
+***SYNTAX***
+```javascript
+Math.sin(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.sin(90 * Math.PI / 180);     //1 (the sine of 90 degrees)
+```
+
+## V.10 cos
+> Returns the cosine (a value between -1 and 1) of the angle x (given in radians).
+
+***SYNTAX***
+```javascript
+Math.cos(value)
+```
+
+***Example***
+```javascript
+//ex
+Math.cos(0 * Math.PI / 180);     //1 (the cos of 0 degrees)
+```
+
+## V.11 min
+> Find the lowest value in a list of arguments.
+
+***SYNTAX***
+```javascript
+Math.min(...numsArray) 
+//or
+Math.min(num1, num2, ..., numn) 
+```
+
+***Example***
+```javascript
+//ex
+Math.min(0, 150, 30, 20, -8, -200);  //-200
+```
+
+## V.12 max
+> Find the largest value in a list of arguments.
+
+***SYNTAX***
+```javascript
+Math.max(...numsArray) 
+//or
+Math.max(num1, num2, ..., numn) 
+```
+
+***Example***
+```javascript
+//ex
+Math.min(0, 150, 30, 20, -8, -200);  //150
+```
+
+## V.13 random
+> Returns a random number between 0 (inclusive), and 1 (exclusive) or in range [0, 1).
+
+***SYNTAX***
+```javascript
+Math.random();
+```
+
+## V.14 log
+> Returns the natural logarithm of value.
+
+***SYNTAX***
+```javascript
+Math.log(value);
+```
+
+## V.15 log2
+> Returns the base 2 logarithm of value.
+
+***SYNTAX***
+```javascript
+Math.log2(value);
+```
+
+## V.16 log10
+> Returns the base 10 logarithm of value.
+
+***SYNTAX***
+```javascript
+Math.log10(value);
+```
+
+# VI. Array and Array Methods
+
+## VI.1 Create an array
 
 ***EXAMPLE***
 ```javascript
@@ -1481,7 +1751,7 @@ cars[5]= "Toyota";
 console.log(cars);                                    //["Saab", "Volvo", "BMW", undefined, undefined, "Toyota"]
 ```
 
-## V.2 for
+## VI.2 for
 ***SYNTAX***
 ```javascript
 for(let i = 0; i < arr.length; i++) {
@@ -1498,7 +1768,7 @@ for(var i = 0; i < arr.length; i++) {
 }
 ```
 
-## V.3 for..in
+## VI.3 for..in
 ***SYNTAX***
 ```javascript
 for(let index in arr) {
@@ -1515,7 +1785,7 @@ for(var key in arr) {
 }
 ```
 
-## V.4 for..of
+## VI.4 for..of
 ***SYNTAX***
 ```javascript
 for(let e of arr) {
@@ -1532,7 +1802,7 @@ for(var e of arr) {
 }
 ```
 
-## V.5 forEach
+## VI.5 forEach
 ***SYNTAX***
 ```javascript
 arr.forEach(function(e){
@@ -1564,7 +1834,7 @@ var myArray = [
 ];
 ```
 
-## V.6 length
+## VI.6 length
 > Length of the array
 
 ***SYNTAX***
@@ -1580,7 +1850,7 @@ length
   </tr>      
 </table>
 
-## V.7 toString
+## VI.7 toString
 > Convert array to string.
 
 ***SYNTAX***
@@ -1607,7 +1877,7 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.toString());      //Banana,Orange,Apple,Mango
 ```
 
-## V.8 join
+## VI.8 join
 > Join arrays together.
 
 ***SYNTAX***
@@ -1644,7 +1914,7 @@ fruits.join(" * ");
 console.log(fruits);      //Banana * Orange * Apple * Mango
 ```
 
-## V.9 pop
+## VI.9 pop
 > Removes the last element of an array
 
 ***SYNTAX***
@@ -1673,7 +1943,7 @@ fruits.pop();
 console.log(fruits);      //["Banana", "Orange", "Apple"]
 ```
 
-## V.10 push
+## VI.10 push
 > Adds a new element to an array at the end
 
 ***SYNTAX***
@@ -1705,7 +1975,7 @@ fruits.push("Kiwi", "Lemon", "Pineapple");
 console.log(fruits);      //["Banana", "Orange", "Apple", "Mango", "Kiwi", "Lemon", "Pineapple"]
 ```
 
-## V.11 shift
+## VI.11 shift
 > Removes the first array element
 
 ***SYNTAX***
@@ -1734,7 +2004,7 @@ fruits.shift();
 console.log(fruits);      //["Orange", "Apple", "Mango"]
 ```
 
-## V.12 unshift
+## VI.12 unshift
 > Adds a new element to the beginning of the array.
 
 ***SYNTAX***
@@ -1766,7 +2036,7 @@ fruits.unshift("Kiwi", "Lemon", "Pineapple");
 console.log(fruits);      //["Kiwi", "Lemon", "Pineapple", "Banana", "Orange", "Apple", "Mango"]
 ```
 
-## V.13 splice
+## VI.13 splice
 > Adds and/or removes array elements.
 
 ***SYNTAX***
@@ -1831,7 +2101,7 @@ fruits.splice(-3, 2, "Kiwi", "Lemon", "Pineapple");
 console.log(fruits);      //["Banana", "Kiwi", "Lemon", "Pineapple", "Mango"]
 ```
 
-## V.14 concat
+## VI.14 concat
 > Joins two or more arrays.
 
 ***SYNTAX***
@@ -1865,7 +2135,7 @@ console.log(hege.concat(stale, kai));     //["Cecilie", "Lone", "Emil", "Tobias"
 console.log(hege.concat("Peter"));        //["Cecilie", "Lone", "Peter"]
 ```
 
-## V.15 slice
+## VI.15 slice
 > Returns selected elements in an array, as a new array.
 
 ***SYNTAX***
@@ -1916,7 +2186,7 @@ var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 console.log(fruits.slice(-3, -1));  //["Lemon", "Apple"]
 ```
 
-## V.16 Add elements to an array
+## VI.16 Add elements to an array
 > At the beginning of the array
 
 ***EXAMPLE***
@@ -1972,7 +2242,7 @@ cars.splice(2, 0, "Toyota", "Kia")
 console.log(cars)                       //['Saab', 'Volvo', 'Toyota', 'Kia', 'BMW']
 ```
 
-## V.17 Delete elements from an array
+## VI.17 Delete elements from an array
 > At the beginning of the array
 
 ***EXAMPLE***
@@ -2021,7 +2291,7 @@ cars.splice(2, 2)
 console.log(cars)                       //['Toyota', 'Kia', 'BMW']
 ```
 
-## V.18 Delete an element by using the JavaScript operator delete
+## VI.18 Delete an element by using the JavaScript operator delete
 > Using "delete" keyword
 ***EXAMPLE***
 ```javascript
@@ -2033,7 +2303,7 @@ delete cars[10];
 console.log(cars);                       //[undefined, "Kia", "Saab", "Volvo", "BMW"]
 ```
 
-## V.19 Sort
+## VI.19 Sort
 
 ***SYNTAX***
 ```javascript
@@ -2127,7 +2397,7 @@ console.log(cars.sort(function(a, b){
 //          ];
 ```
 
-## V.20 Find min, max
+## VI.20 Find min, max
 > Find min, max
 
 ***EXAMPLE***
@@ -2138,7 +2408,7 @@ console.log(Math.max(...arr));        //10
 console.log(Math.min(...arr));        //1
 ```
 
-## V.21 forEach, reduce, indexOf, find
+## VI.21 forEach, reduce, indexOf, find
 > The forEach method calls a function once for each element in an array, in order.
 
 ***SYNTAX***
@@ -2340,7 +2610,7 @@ var result = arr.find(function(currentValue, index, arr){
 console.log(result);                 //10
 ```
 
-## V.22 every, some, includes
+## VI.22 every, some, includes
 > The every function returns true if all elements in an array pass a test.
 
 ***SYNTAX***
@@ -2434,8 +2704,7 @@ var survey = [
   { name: "Elaine", answer: "No"}
 ];
 //Check if there is a "No" answer 
-var result = survey.some(function(currentValue, index, arr){
-                  if(index === 0) return true;
+var result = survey.some(function(currentValue, index, arr){                  
                   return currentValue.answer === "No";
                 }
               );
@@ -2482,7 +2751,7 @@ console.log(fruits.includes("Banana", 3));        //false
 console.log(fruits.includes("Apple", -2));        //true
 ```
 
-## V.23 filter, map
+## VI.23 filter, map
 > The filter function creates an array filled with all array elements that pass a test.
 
 ***SYNTAX***
@@ -2583,9 +2852,9 @@ var result = arr.map(function(currentValue, index, arr){
 console.log(result);        //[60, 90, 40, 80, 30, 100, 10, 20]
 ```
 
-## VI. Object and more
+## VII. Object and more
 
-### VI.1 Create an object
+### VII.1 Create an object
 
 ***EXAMPLE***
 ```javascript
@@ -2619,7 +2888,7 @@ person.eyeColor = "blue";
 console.log(person);		//{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 ```
 
-### VI.2 Access JS object
+### VII.2 Access JS object
 ***EXAMPLE***
 ```javascript
 //ex1: access directly through object's properties
@@ -2638,7 +2907,7 @@ var lName = "lastName";
 console.log(person[fName] + person[lName]);               //Steve Job
 ```
 
-### VI.3 Add new properties for the object
+### VII.3 Add new properties for the object
 ***EXAMPLE***
 ```javascript
 //ex: add nationality for person object
@@ -2655,7 +2924,7 @@ console.log(person);          //{firstName: "John", lastName: "Doe", age: 50,
                               //eyeColor: "blue", nationality: "English"}
 ```
 
-### VI.4 Edit properties for the object
+### VII.4 Edit properties for the object
 ***EXAMPLE***
 ```javascript
 //ex: edit age for person object
@@ -2671,7 +2940,7 @@ person.age = 58;
 console.log(person);          //{firstName: "John", lastName: "Doe", age: 58, eyeColor: "blue"}
 ```
 
-### VI.5 Delete properties of the object
+### VII.5 Delete properties of the object
 > To delete a property of an object, using "delete" keyword
 
 ***EXAMPLE***
@@ -2689,7 +2958,7 @@ delete person.age;
 console.log(person);          //{firstName: "John", lastName: "Doe", eyeColor: "blue"}
 ```
 
-### VI.6 Copy an object
+### VII.6 Copy an object
 > There are 3 way to copy an object
 > 1. Using three dots
 > 2. Using Object.assign
@@ -2831,7 +3100,7 @@ const obj = { 10: 'arry', 21: 'barry', 23: 'carry' };
 console.log(Object.entries(obj)[2]);	//["23", "carry"]  
 ```
 
-### VI.7 JS objects are mutable. 
+### VII.7 JS objects are mutable. 
 > If an object is mutable, modifying the copy also modifies the original. In JavaScript numbers, strings, null, undefined and booleans are primitive types which are immutable. Objects, arrays, functions, classes, maps, and sets are mutable.
 
 ***EXAMPLE***
@@ -2854,7 +3123,7 @@ console.log(person);          //{firstName: "Steve", lastName: "Job", age: 50, e
 
 ***Explain:*** the object x **is not a copy** of person. Both x and person are the same object. If changing person object, x is also changed, and so on.
 
-### VI.8 for...in
+### VII.8 for...in
 
 ***SYNTAX***
 ```javascript
@@ -2878,7 +3147,7 @@ for(let index in person) {
 }
 ```
 
-### VI.9 for...of
+### VII.9 for...of
 
 ***SYNTAX***
 ```javascript
@@ -2903,7 +3172,7 @@ for(var [key, value] of Object.entries(person)) {
 }
 ```
 
-### VI.10 forEach
+### VII.10 forEach
 
 ***SYNTAX***
 ```javascript
@@ -2933,7 +3202,7 @@ Object.entries(person).forEach(function([key, value]){
 })
 ```
 
-### VI.11 Nested objects and function in an object
+### VII.11 Nested objects and function in an object
 > Nested objects
 
 ***EXAMPLE***
@@ -3000,7 +3269,7 @@ person.pAge = 50;
 console.log(person.pDetail);                //John Doe, age: 50
 ```
 
- ### VI.12 JSON.stringify
+ ### VII.12 JSON.stringify
 > Convert an object to a string
 
 ***SYNTAX***
@@ -3059,7 +3328,7 @@ var person = {
 console.log(Object.values(person))          //["John", "Doe", 30]
 ```
  
-### VI.13 JS Object constructor
+### VII.13 JS Object constructor
 > create an object constructor
 
 ***EXAMPLE***
@@ -3115,7 +3384,7 @@ Person.prototype.fullName = function() {
 };
 ```
 
-## VII. Set and Set methods
+## VIII. Set and Set methods
 > A collection of unique values
 > Each value can only occur once in a Set
 
@@ -3126,7 +3395,7 @@ var number = new Set([0,1,2,3,0,1,2,3]);
 console.log(number);                        //{0, 1, 2, 3}
 ```
 
-### VII.1 Create a set
+### VIII.1 Create a set
 ***EXAMPLE***
 ```javascript
 //ex: Create a set
@@ -3140,7 +3409,7 @@ letters.add("c");
 console.log(letters);                        //{"a", "b", "c"}
 ```
 
-### VII.2 Add an element in a set
+### VIII.2 Add an element in a set
 ***EXAMPLE***
 ```javascript
 //ex: Add elements to a set
@@ -3160,7 +3429,7 @@ letters.add(c);
 console.log(letters);                        //{"a", "b", "c"}
 ```
 
-### VII.3 Delete an element in a set
+### VIII.3 Delete an element in a set
 ***EXAMPLE***
 ```javascript
 //ex: Delete an element in a set
@@ -3169,7 +3438,7 @@ letters.delete("a");
 console.log(letters);                        //{"b", "c"}
 ```
 
-### VII.4 size
+### VIII.4 size
 > Size of a set
 
 ***SYNTAX***
@@ -3184,7 +3453,7 @@ var letters = new Set(["a","b","c"]);
 console.log(letters.size);                    //3
 ```
 
-### VII.5 has
+### VIII.5 has
 > Check existing of an element in a set
 
 ***SYNTAX***
@@ -3199,7 +3468,7 @@ var letters = new Set(["a","b","c"]);
 console.log(letters.has("a"));              //true
 ```
 
-c
+### VIII.6 clear
 > Remove all elements in a set
 
 ***SYNTAX***
@@ -3214,7 +3483,7 @@ var letters = new Set(["a","b","c"]);
 console.log(letters.clear());                 //undefined
 ```
 
-### VII.7 for
+### VIII.7 for
 ***EXAMPLE***
 ```javascript
 //ex1: loop all elements in set using keys
@@ -3236,7 +3505,7 @@ for(var [key, value] of letters.entries()) {
 }
 ```
 
-### VII.8 forEach
+### VIII.8 forEach
 ***EXAMPLE***
 ```javascript
 //ex: loop all elements using forEach
@@ -3246,11 +3515,11 @@ letters.forEach(function(value){
 })
 ```
 
-## VIII. Map and Map methods
+## IX. Map and Map methods
 > A Map holds key-value pairs
 > A Map remembers the original insertion order of the keys
 
-### VIII.1 Create a map
+### IX.1 Create a map
 ***EXAMPLE***
 ```javascript
 //ex: Create a new map
@@ -3269,7 +3538,7 @@ fruits.set("oranges", 200);
 console.log(fruits);                //{'apples' => 500, 'bananas' => 300, 'oranges' => 200}
 ```
 
-### VIII.2 Add an element in a map
+### IX.2 Add an element in a map
 ***EXAMPLE***
 ```javascript
 //ex: Add a new element to a map
@@ -3282,7 +3551,7 @@ fruits.set("grapes", 100);
 console.log(fruits);                //{'apples' => 500, 'bananas' => 300, 'oranges' => 200, 'grapes' => 100}
 ```
 
-### VIII.3 Get an element in a map
+### IX.3 Get an element in a map
 ***EXAMPLE***
 ```javascript
 //ex: Get a value by a key in map
@@ -3294,7 +3563,7 @@ var fruits = new Map([
 console.log(fruits.get("bananas")); //300
 ```
 
-### VIII.4 Delete an element in a map
+### IX.4 Delete an element in a map
 ***EXAMPLE***
 ```javascript
 //ex: Delete an element in a map with a key
@@ -3307,7 +3576,7 @@ fruits.delete("oranges");
 console.log(fruits);                //{'apples' => 500, 'bananas' => 300}
 ```
 
-### VIII.5 size
+### IX.5 size
 > Size of a map
 
 ***SYNTAX***
@@ -3326,7 +3595,7 @@ var fruits = new Map([
 console.log(fruits.size);         //3
 ```
 
-### VIII.6 has
+### IX.6 has
 > Check existing of an element in a map
 
 ***SYNTAX***
@@ -3345,7 +3614,7 @@ var fruits = new Map([
 console.log(fruits.has("apples"));  //true
 ```
 
-### VIII.7 clear
+### IX.7 clear
 > Remove all elements in a set
 
 ***SYNTAX***
@@ -3364,7 +3633,7 @@ var fruits = new Map([
 console.log(fruits.clear());      //undefined
 ```
 
-### VIII.8 for
+### IX.8 for
 ***EXAMPLE*** 
 ```javascript
 //ex1: Iterate through the map using keys
@@ -3398,7 +3667,7 @@ for(var [key, value] of fruits.entries()) {
 }
 ```
 
-### VIII.9 forEach
+### IX.9 forEach
 ***EXAMPLE*** 
 ```javascript
 //ex: Iterate through the map using forEach
@@ -3412,7 +3681,8 @@ fruits.forEach(function(value, key){
 })
 ```
 
-## IX. try catch finally
+## X. try catch and Unit test
+### X.1 try catch finally
 > Catch error
 
 ***SYNTAX***
@@ -3471,6 +3741,9 @@ function foo() {
 } 
 console.log(foo());             //false;
 ```
+
+### X.2 throw
+> custom exceptions
 
 ***USING***
 - ***throw:*** create a custom error. The exception can be a string, number, boolean, or an object.
@@ -3559,6 +3832,12 @@ try {
     </td>
   </tr>
 </table>
+
+### X.3 Unit test
+  - Install the Unit test (https://jestjs.io/docs/getting-started)
+  - Use the Unit test (https://jestjs.io/docs/using-matchers#common-matchers)
+  - Handle asynchronous code (https://jestjs.io/docs/setup-teardown#repeating-setup-for-many-tests)
+  - Example ()
 
 ## X. Scope, Closure and strict mode
 ### X.1 Scope 
@@ -3714,8 +3993,8 @@ function createApp() {
 ### X.3 Strict mode
 > Prevent unsafe codes or potential errors when using global variables
 >   must be used var, let, const to declare a new variable
->   cannot use private, protected, etc
->   cannot use the same properties in a function
+>   cannot use reversed keywords such as private, protected, etc to assgin variables
+>   cannot use the same parameters in a function
 >   cannot use a function out of a block code
 
 ***EXAMPLE***
@@ -3733,7 +4012,7 @@ function showX() {
 'use strict';
 var private = 2;  //Uncaught SyntaxError: Unexpected strict mode reserved word
 
-//ex3: cannot use the same properties in a function
+//ex3: cannot use the same parameters in a function
 'use strict';
 function sum(a, a) {    //Uncaught SyntaxError: Duplicate parameter name not allowed in this context
   return a + a; 
@@ -3749,7 +4028,7 @@ function sum(a, a) {    //Uncaught SyntaxError: Duplicate parameter name not all
 console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
 ```
 
-## XI. Hoisting
+## XI. Hoisting and this keyword
 > In JS, a variable can be declared after it has been used. Var, let, const, and function can be hoisted, but let and const are in Temporal Dead Zone.
 
 ***EXAMPLE***
