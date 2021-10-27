@@ -114,29 +114,31 @@
   - [X.1 try catch finally](#x1-try-catch-finally)
   - [X.2 throw](#x2-throw)
   - [X.3 Unit test](#x3-unit-test)
-- [XI. Scope, Closure, Strict Mode, and Hoisting](#x-scope-closure-and-strict-mode)
-  - [XI.1 Scope](#x1-scope)
-  - [XI.2 Closure](#x2-closure)
-  - [XI.3 Strict mode](#x3-strict-mode)
-  - [XI.4 Hoisting](#xi-hoisting)
-- [XII. Arrow Function and IIFE](#xii-arrow-function-and-iife)
-  - [XII.1 Arrow Function](#xii1-arrow-function)
-  - [XII.2 IIFE (Immediately Invoked Function Expression)](#xii2-iife-immediately-invoked-function-expression)
-- [XXIII. Callback, Promise, Async/Await](#xiii-callback-promise-asyncawait)
-  - [XIII.1 Callback](#xiii1-callback)
-  - [XIII.2 Promise](#xiii2-promise)
-  - [XIII.3 Asyn/Await]
-- [XIV. ECMAScript 6](#xiv-ecmascript-6)
-  - [XIV.1 Template literals](#xiv1-template-literals)
-  - [XIV.2 Default parameter](#xiv2-default-parameter)
-  - [XIV.3 Enhanced object literals](#xiv3-enhanced-object-literals)
-  - [XIV.4 Destructuring](#xiv4-destructuring)
-  - [XIV.5 Spread Operator](#xiv5-spread-operator)
-  - [XIV.6 Modules](#xiv6-modules)
-- [XVII. HTML DOM and jQuery](xvi-unit-test)
-- [XVIII. AJAX, JSON, APIs](xvi-unit-test)
-- [XIX. JS Graphic]
+- [XI. Scope, Closure, Strict Mode, Hoisting, and this keyword](#xi-scope-closure-and-strict-mode-hoisting-and-this-keyword)
+  - [XI.1 Scope](#xi1-scope)
+  - [XI.2 Closure](#xi2-closure)
+  - [XI.3 Strict mode](#xi3-strict-mode)
+  - [XI.4 Hoisting](#xi4-hoisting)
+  - [XI.5 this keyword](#xi5-this-keyword)
+- [XII. Callback, Arrow Function and IIFE](#xii-arrow-function-and-iife)
+  - [XII.1 Callback](#xii1-callback)
+  - [XII.2 Arrow Function](#xii2-arrow-function)
+  - [XII.3 IIFE (Immediately Invoked Function Expression)](#xii3-iife-immediately-invoked-function-expression)
+- [XIII. Promise, Async/Await](#xiii-callback-promise-asyncawait)
+  - [XIII.1 Promise](#xiii1-promise)
+  - [XIII.2 Asyn/Await](#xiii2-asyn-await)
+- [XIX. ECMAScript 6](#xiv-ecmascript-6)
+  - [XIX.1 Template literals](#xiv1-template-literals)
+  - [XIX.2 Default parameter](#xiv2-default-parameter)
+  - [XIX.3 Enhanced object literals](#xiv3-enhanced-object-literals)
+  - [XIX.4 Destructuring](#xiv4-destructuring)
+  - [XIX.5 Spread Operator](#xiv5-spread-operator)
+  - [XIX.6 Modules](#xiv6-modules)
+- [XX. HTML DOM and jQuery](xvi-unit-test)
+- [XXI. AJAX, JSON, APIs](xvi-unit-test)
+- [XXII. JS Graphic]
 # References
+- https://udemy.com/
 - https://fullstack.edu.vn/
 - https://www.w3schools.com/
 - https://developer.mozilla.org/
@@ -3742,32 +3744,6 @@ function foo() {
 console.log(foo());             //false;
 ```
 
-### X.2 throw
-> custom exceptions
-
-***USING***
-- ***throw:*** create a custom error. The exception can be a string, number, boolean, or an object.
-
-***EXAMPLE***
-```javascript
-//ex
-let x = prompt("Please enter x");
-try {
-  if(x == "") throw "empty";
-  if(isNaN(x)) throw "Not a Number";
-  x = Number(x);
-  if(x > 0) throw "Positive";
-  if(x < 0) throw "Negative";
-} catch (error) {
-  console.log("error:", error);
-}
-
-//if x = 10, the output is "error: Positive";
-//if x = -10, the output is "error: Negative";
-//if x = "", the output is "error: empty";
-//if x = string, the output is "error: Not a Number";
-```
-
 ---
 ***NOTE***
 <table> 
@@ -3833,14 +3809,40 @@ try {
   </tr>
 </table>
 
+### X.2 throw
+> custom exceptions
+
+***USING***
+- ***throw:*** create a custom error. The exception can be a string, number, boolean, or an object.
+
+***EXAMPLE***
+```javascript
+//ex
+let x = prompt("Please enter x");
+try {
+  if(x == "") throw "empty";
+  if(isNaN(x)) throw "Not a Number";
+  x = Number(x);
+  if(x > 0) throw "Positive";
+  if(x < 0) throw "Negative";
+} catch (error) {
+  console.log("error:", error);
+}
+
+//if x = 10, the output is "error: Positive";
+//if x = -10, the output is "error: Negative";
+//if x = "", the output is "error: empty";
+//if x = string, the output is "error: Not a Number";
+```
+
 ### X.3 Unit test
   - Install the Unit test (https://jestjs.io/docs/getting-started)
   - Use the Unit test (https://jestjs.io/docs/using-matchers#common-matchers)
   - Handle asynchronous code (https://jestjs.io/docs/setup-teardown#repeating-setup-for-many-tests)
-  - Example ()
+  - Example (https://github.com/MichaelPhamNgo/Review-Javascript/tree/main/X.%20Try%20Catch%20and%20Unit%20Test)
 
-## X. Scope, Closure and strict mode
-### X.1 Scope 
+## XI. Scope, Closure, Strict Mode, Hoisting, and this keyword
+### XI.1 Scope 
 > There are 3 types of scopes:
 >   Block scope
 >   Function scope
@@ -3922,7 +3924,7 @@ let x = 2;
 }
 ```
 
-### X.2 Closure 
+### XI.2 Closure 
 > A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 ***EXAMPLE***
@@ -3990,7 +3992,7 @@ function createApp() {
 //> app.get(1)                                      //{firstName: 'Steve', lastName: 'Job'}
 ```
 
-### X.3 Strict mode
+### XI.3 Strict mode
 > Prevent unsafe codes or potential errors when using global variables
 >   must be used var, let, const to declare a new variable
 >   cannot use reversed keywords such as private, protected, etc to assgin variables
@@ -4028,7 +4030,7 @@ function sum(a, a) {    //Uncaught SyntaxError: Duplicate parameter name not all
 console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
 ```
 
-## XI. Hoisting and this keyword
+## XI.4 Hoisting and this keyword
 > In JS, a variable can be declared after it has been used. Var, let, const, and function can be hoisted, but let and const are in Temporal Dead Zone.
 
 ***EXAMPLE***
@@ -4083,9 +4085,52 @@ function counter() {
   }
 }
 ```
+## XI.5 this keyword
 
-## XII. Arrow Function and IIFE
-### XII.1 Arrow Function
+## XII. Callback, Arrow Function and IIFE
+### XII.1 Callback
+> A callback function is a function passed into another function as an argument.
+
+***EXAMPLE***
+```javascript
+//ex1: Show Hello World using callback function
+function myFunction(param) {
+  param("Hello World!!!");
+}
+
+function myCallback(value) {
+  console.log(value);
+}
+
+myFunction(myCallback);         //Hello World
+
+//ex2: Calculate using callback functions
+function Calculator(param) {
+  console.log(param(10, 2));
+}
+
+function multiplication(a, b) {
+  return a * b;
+}
+
+function addition(a, b) {
+  return a + b;
+}
+
+function substraction(a, b) {
+  return a - b;
+}
+
+function division(a, b) {
+  return a / b;
+}
+
+Calculator(multiplication);         //20
+Calculator(addition);               //12
+Calculator(substraction);           //8
+Calculator(division);               //5
+```
+### XII.2 Arrow Function
 > Allow us to write shorter function syntax
 
 ***EXAMPLE***
@@ -4212,51 +4257,8 @@ const app = (function() {
 //> app.get(1)                                      //{firstName: 'Steve', lastName: 'Job'}
 ```
 
-## XIII. Callback, Promise, Async/Await
-### XIII.1 Callback
-> A callback function is a function passed into another function as an argument.
-
-***EXAMPLE***
-```javascript
-//ex1: Show Hello World using callback function
-function myFunction(param) {
-  param("Hello World!!!");
-}
-
-function myCallback(value) {
-  console.log(value);
-}
-
-myFunction(myCallback);         //Hello World
-
-//ex2: Calculate using callback functions
-function Calculator(param) {
-  console.log(param(10, 2));
-}
-
-function multiplication(a, b) {
-  return a * b;
-}
-
-function addition(a, b) {
-  return a + b;
-}
-
-function substraction(a, b) {
-  return a - b;
-}
-
-function division(a, b) {
-  return a / b;
-}
-
-Calculator(multiplication);         //20
-Calculator(addition);               //12
-Calculator(substraction);           //8
-Calculator(division);               //5
-```
-
-### XIII.2 Promise 
+## XIII. Promise, Async/Await
+### XIII.1 Promise 
 Let's imagine we're trying to make a burger. To make a burger, we need to go through the following steps:
 1. Get beef
 2. Cook the beef
