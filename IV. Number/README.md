@@ -60,19 +60,19 @@ isNaN(value)
 ```javascript
 //ex1
 console.log(isNaN("Hello World"));	    //?
-console.log(isNaN("001"));		        //?
-console.log(isNaN(1));			        //?
+console.log(isNaN("001"));		          //?
+console.log(isNaN(1));			            //?
+console.log(x.toFixed(0));              //?
 
 //ex2
 var x = 9.656;
-console.log(x.toFixed(0));              //?
 console.log(x.toFixed(2));              //?
 console.log(x.toFixed(4));              //?
 console.log(x.toFixed(6));              //?
+console.log(x.toPrecision());           //?
 
 //ex3
 var x = 9.656;
-console.log(x.toPrecision());            //?
 console.log(x.toPrecision(2));           //?
 console.log(x.toPrecision(4));           //?
 console.log(x.toPrecision(6));           //?
@@ -81,6 +81,8 @@ console.log(x.toPrecision(6));           //?
 console.log(Number());                  //?
 console.log(Number(true));              //?
 console.log(Number(false));             //?
+console.log(Number(null));              //?
+console.log(Number(undefined));         //?
 console.log(Number("10"));              //?
 console.log(Number("  10"));            //?
 console.log(Number("  10  "));          //?
@@ -102,3 +104,4 @@ console.log(parseFloat("10 20 30"));    //?
 console.log(parseFloat("10 years"));    //?
 console.log(parseFloat("years 10"));    //?
 ```
+

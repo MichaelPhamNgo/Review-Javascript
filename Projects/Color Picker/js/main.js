@@ -12,13 +12,10 @@ const initialColors = {
  *      colors: array of colors
  *      defColor: default color when the first loading in the first time, and color when we clicked on a specific color      
  */
-function loadColors(colors, defColor, defSize) {
-    const eleColors = colors.map(function(color, index){
-        return `<div key=${index} class='box ${color} ${color === defColor ? 'active' : ''}' onclick='changeColor("${color}")'></div>`;
-    });    
+function loadColors(colors, defColor, defSize) {    
     let htmlColorPicker = "";
-    for(let color of eleColors) {
-        htmlColorPicker += color;
+    for(let index in colors) {
+        htmlColorPicker += `<div key=${index} class='box ${colors[index]} ${colors[index] === defColor ? 'active' : ''}' onclick='changeColor("${colors[index]}")'></div>`;
     }    
 
     document.querySelector(".color-picker .card-body").innerHTML = htmlColorPicker;    

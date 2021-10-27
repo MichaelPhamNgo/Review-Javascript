@@ -797,4 +797,258 @@ var people = [
   {firstname : "Kaylee", lastname: "Frye"},
   {firstname : "Jayne", lastname: "Cobb"}
 ];
+
+//My forEach2
+Array.prototype.forEach2 = function(callback){
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {
+            callback(this[index], index, this);
+        }
+    }
+}
+
+const courses = ["Javascript", "PHP", "Ruby"];
+
+courses.forEach2(function(course, index, arr) {
+    console.log(course, index, arr);
+})
+
+//My filter2
+Array.prototype.filter2 = function(callback) {    
+    const ans = [];
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {            
+            let result = callback(this[index], index, this);
+            if(result) {
+                ans.push(this[index]);
+            }
+        }
+    }
+    return ans;
+}
+
+const arr = [6, 9, 4, 8, 3, 10, 1, 2];
+
+console.log(arr.filter2(function(curr, index, arr){    
+    return curr > 5;
+}));
+
+//My some2
+Array.prototype.some2 = function(callback) {
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {            
+            let result = callback(this[index], index, this);            
+            if(result) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+const survey = [
+    { name: "Steve", answer: "Yes"},
+    { name: "Jessica", answer: "Yes"},
+    { name: "Peter", answer: "Yes"},
+    { name: "Elaine", answer: "No"}
+  ];
+
+console.log(survey.some2(function(curr, index, arr){
+    return curr.answer === 'No';
+})); 
+
+//My every2
+Array.prototype.every2 = function(callback) {
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {                        
+            let result = callback(this[index], index, this);                  
+            if(!result) {                
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+const survey2 = [
+    { name: "Steve", answer: "No"},
+    { name: "Jessica", answer: "No"},
+    { name: "Peter", answer: "No"},
+    { name: "Elaine", answer: "No"}
+  ];
+
+  
+console.log(survey2.every2(function(curr, index, arr){    
+    return curr.answer === 'No';
+})); 
+
+//My includes2
+Array.prototype.includes2 = function(element , start = 0) {
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {                          
+            if(start >= 0) {
+                if(index >= start && this[index] === element) {
+                    return true;
+                }
+            } else {
+                const arrLength = this.length - 1;
+                const newStart = arrLength + start;
+                if(index >= newStart && this[index] === element) {
+                    return true;
+                }
+            }            
+        }
+    }
+    return false;
+}
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+console.log(fruits.includes2("Banana"));   
+console.log(fruits.includes2("Banana", 3)); 
+console.log(fruits.includes("Apple", -2));
+
+//My indexOf2
+Array.prototype.indexOf2 = function(element , start = 0) {
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {                          
+            if(start >= 0) {
+                if(index >= start && this[index] === element) {
+                    return index;
+                }
+            } else {
+                const arrLength = this.length - 1;
+                const newStart = arrLength + start;
+                if(index >= newStart && this[index] === element) {
+                    return index;
+                }
+            }            
+        }
+    }
+    return -1;
+}
+
+const fruits2 = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+console.log(fruits2.indexOf("Apple"));                     //2
+console.log(fruits2.indexOf("Apple", 2));                  //2
+console.log(fruits2.indexOf("Apple", -2));                 //4
+console.log(fruits2.indexOf("Apple", -3));                 //2
+
+//My find2
+Array.prototype.find2 = function(callback) {
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {                          
+            if(callback(this[index], index, arr)) {
+                return this[index];
+            }
+        }
+    }    
+}
+
+const arr1 = [6, 9, 4, 8, 3, 10, 1, 2];
+const result = arr1.find2(function(currentValue, index, arr){
+      return currentValue > 9;
+    }
+);
+console.log(result); 
+
+//My map2
+Array.prototype.map2 = function(callback) {    
+    const ans = [];
+    for(let index in this) {
+        if(this.hasOwnProperty(index)) {            
+            ans.push(callback(this[index], index, this));
+        }
+    }
+    return ans;
+}
+
+const people = [
+    {firstname : "Malcom", lastname: "Reynolds"},
+    {firstname : "Kaylee", lastname: "Frye"},
+    {firstname : "Jayne", lastname: "Cobb"}
+  ];
+
+console.log(people.map2(function(curr, index, arr){    
+    return `${curr.firstname} ${curr.lastname}`;
+}));
+
+const arr2 = [6, 9, 4, 8, 3, 10, 1, 2];
+console.log(arr2.map2(function(currentValue, index, arr){
+    return currentValue * 10;
+})); 
+
+//My reduce2
+Array.prototype.reduce2 = function(callback, initialValue) {        
+    let accumulator = initialValue;
+    for(let index in this) {        
+        if(this.hasOwnProperty(index)) {                                                               
+            accumulator = callback(accumulator, this[index], index, this);            
+        }
+    }
+    return accumulator;
+}
+
+const shoppingCart = [{
+    product: 'phone',
+    qty: 1,
+    price: 699
+},
+{
+    product: 'Screen Protector',
+    qty: 1,
+    price: 9.98
+},
+{
+    product: 'Memory Card',
+    qty: 2,
+    price: 20.99
+}
+];
+
+console.log(shoppingCart.reduce2(function(sum, currentValue, currentIndex, arr){    
+    return sum + currentValue.qty * currentValue.price;
+}, 0));
+
+console.log([6, 9, 4, 8, 3, 10, 1, 2].reduce2(function(sum, currentValue, currentIndex, arr){
+      return sum + currentValue;
+    }, 0)); 
+
+console.log([1,2,[3,4],5,6,[7,8,9]].reduce2(function(flatOutput, depthItem){
+    return flatOutput.concat(depthItem);
+  }, []));
+
+const topics = [
+    {
+        topic : "Front-end",
+        courses : [
+            {
+                id : 1,
+                title : "HTML, CSS"
+            },
+            {
+                id : 2,
+                title : "Javascript"
+            }
+        ]
+    },
+    {
+        topic : "Backend-end",
+        courses : [
+            {
+                id : 1,
+                title : "PHP"
+            },
+            {
+                id : 2,
+                title : "Ruby"
+            }
+        ]
+    }
+]
+
+console.log(topics.reduce2(function(courses, topic){
+    return courses.concat(topic.courses);
+  }, []));
 ```
+

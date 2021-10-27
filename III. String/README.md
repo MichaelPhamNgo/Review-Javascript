@@ -727,3 +727,7 @@ console.log(str.split(""));                     //?
 console.log(str.split(" "));                    //?
 console.log(str.split(" "),3);                  //?
 ```
+
+***PRACTICE***
+1. Remove vowel in a string
+2. 
