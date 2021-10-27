@@ -4030,7 +4030,7 @@ function sum(a, a) {    //Uncaught SyntaxError: Duplicate parameter name not all
 console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
 ```
 
-## XI.4 Hoisting and this keyword
+## XI.4 Hoisting
 > In JS, a variable can be declared after it has been used. Var, let, const, and function can be hoisted, but let and const are in Temporal Dead Zone.
 
 ***EXAMPLE***
