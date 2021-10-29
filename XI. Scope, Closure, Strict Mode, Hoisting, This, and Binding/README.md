@@ -1,11 +1,11 @@
 ## Scope, Closure, Strict Mode, Hoisting, and this keyword
 ### Scope 
-> There are 5 types of scopes:
->   Block scope
->   Function scope
->   Module scope
->   Global  scope
->   Lexical scope
+- There are 5 types of scopes:
+    - Block scope
+    - Function scope
+    - Module scope
+    - Global  scope
+    - Lexical scope
 
 #### Block scope
 > A code block in JavaScript defines a scope for variables declared using let and const
@@ -26,11 +26,11 @@
 > A closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 ### Strict mode
-> Prevent unsafe codes or potential errors when using global variables
->   must be used var, let, const to declare a new variable
->   cannot use reversed keywords such as private, protected, etc to assgin variables
->   cannot use the same parameters in a function
->   cannot use a function out of a block code
+-  Prevent unsafe codes or potential errors when using global variables
+    - must be used var, let, const to declare a new variable
+    - cannot use reversed keywords such as private, protected, etc to assgin variables
+    - cannot use the same parameters in a function
+    - cannot use a function out of a block code
 
 ## Hoisting
 > In JS, a variable can be declared after it has been used. Var, let, const, and function can be hoisted, but let and const are in Temporal Dead Zone.
