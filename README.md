@@ -114,12 +114,13 @@
   - [X.1 try catch finally](#x1-try-catch-finally)
   - [X.2 throw](#x2-throw)
   - [X.3 Unit test](#x3-unit-test)
-- [XI. Scope, Closure, Strict Mode, Hoisting, and this keyword](#xi-scope-closure-and-strict-mode-hoisting-and-this-keyword)
+- [XI. Scope, Closure, Strict Mode, Hoisting, this keyword, and binding](#xi-scope-closure-and-strict-mode-hoisting-and-this-keyword)
   - [XI.1 Scope](#xi1-scope)
   - [XI.2 Closure](#xi2-closure)
   - [XI.3 Strict mode](#xi3-strict-mode)
   - [XI.4 Hoisting](#xi4-hoisting)
   - [XI.5 this keyword](#xi5-this-keyword)
+  - [XI.6 binding](#xi6-binding)
 - [XII. Callback, Arrow Function and IIFE](#xii-arrow-function-and-iife)
   - [XII.1 Callback](#xii1-callback)
   - [XII.2 Arrow Function](#xii2-arrow-function)
@@ -135,7 +136,7 @@
   - [XIX.5 Spread Operator](#xiv5-spread-operator)
   - [XIX.6 Modules](#xiv6-modules)
 - [XX. HTML DOM and jQuery](xvi-unit-test)
-- [XXI. AJAX, JSON, APIs](xvi-unit-test)
+- [XXI. AJAX, JSON, RestAPI, APIs](xvi-unit-test)
 - [XXII. JS Graphic]
 # References
 - https://udemy.com/
@@ -3742,6 +3743,23 @@ function foo() {
   }
 } 
 console.log(foo());             //false;
+
+//ex4: check if dividing by zero
+function division(numerator, denominator) {
+  try {
+    if(!(typeof numerator === 'number') || !(typeof denominator === 'number') ) {
+      throw new TypeError('The inputs have to be numbers');
+    }
+
+    if(denominator === 0) {
+      throw new RangeError('The denominator is not a zero');
+    }
+
+    console.log(`${numerator} / ${denominator} = ${ numerator/denominator}`);
+  } catch (e) {
+    console.log(e);
+  }
+}
 ```
 
 ---
@@ -3836,48 +3854,94 @@ try {
 ```
 
 ### X.3 Unit test
-  - Install the Unit test (https://jestjs.io/docs/getting-started)
-  - Use the Unit test (https://jestjs.io/docs/using-matchers#common-matchers)
+  - Setup Jest (https://jestjs.io/docs/getting-started)
+  - Common Jest Matchers (https://jestjs.io/docs/using-matchers#common-matchers)
   - Handle asynchronous code (https://jestjs.io/docs/setup-teardown#repeating-setup-for-many-tests)
   - Example (https://github.com/MichaelPhamNgo/Review-Javascript/tree/main/X.%20Try%20Catch%20and%20Unit%20Test)
 
 ## XI. Scope, Closure, Strict Mode, Hoisting, and this keyword
 ### XI.1 Scope 
-> There are 3 types of scopes:
+> There are 5 types of scopes:
 >   Block scope
 >   Function scope
+>   Module scope
 >   Global  scope
+>   Lexical scope
 
 #### Block scope
+> A code block in JavaScript defines a scope for variables declared using let and const
+
 ***EXAMPLE***
 ```javascript
 //ex1: cannot access x out of block scope if using let
 {
-  let x = 2;
+  const x = 2;
   console.log(x);           //2
 }
-console.log(x);             //Error
+console.log(x);             //ReferenceError
 
 //ex2:
+if (true) {  
+  const message = 'Hello';
+  console.log(message);     //Hello
+}
+console.log(message);       //ReferenceError
+```
+
+> but var keyword is not block scoped
+
+***EXAMPLE***
+```javascript
+//ex
 {
   var x = 2;
-  console.log(x);           //output: 2
+  console.log(x);           //2
 }
-console.log(x);             //output: 2
+console.log(x);             //2
 ```
 
 #### Function scope
+> A function in JavaScript defines a scope for variables declared using var, let and const
+
 ***EXAMPLE***
 ```javascript
 //ex
-function showX(){
-  let x = 0;
-  return x;
+function run() {  
+  const two = 2;
+  let count = 0;
+  var message = 'Hello World';
+  function run2() {}
+  console.log(two);       //2
+  console.log(count);     //0
+  console.log(message);   //Hello World
+  console.log(run2);      //function
 }
-console.log(x);             //Error
+run();
+console.log(two);         //ReferenceError
+console.log(count);       //ReferenceError
+console.log(message);     //ReferenceError
+console.log(run2);        //ReferenceError
 ```
 
+#### Module scope
+> The module scope makes the module encapsulated. It means we cannot access a "private" variable of a module from outside. The module scope protects the variables from being accessed outside except for export these variables. 
+
+***EXAMPLE***
+```javascript
+//ex
+//message.js
+const message = "Hello World";
+console.log(message);       //Hello World
+
+//showMessage.js 
+import './message';
+console.log(message);       ///ReferenceError
+```
+
+
 #### Global scope
+> The global scope is the outermost scope. It is accessible from any inner scope. let, const, and var are accessible from the inside code block.
+
 ***EXAMPLE***
 ```javascript
 //ex
@@ -3889,47 +3953,31 @@ function showX(){
 console.log(x);             //2
 ```
 
----
-***NOTE***
-- With let, const, var, we are able to access from the inside code block
-***EXAMPLE***
-```javascript
-let x = 2;
-{
-  {    
-    console.log(x);       //2
-  }
-}
-```
-- We can declare the same variables
-***EXAMPLE***
-```javascript
-let x = 2;
-{
-  {    
-    let x = 10;
-    console.log(x);       //10            
-  }
-}
-```
-- Even so
-***EXAMPLE***
-```javascript
-let x = 2;
-{
-  {    
-    console.log(x);     //Cannot access 'x' before initialization because hoisting     
-    let x = 10;
-  }    
-}
-```
-
-### XI.2 Closure 
-> A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+#### Lexical scope
+> Lexical scope means a nested group  of function (function within a function), the inner functions have to access to the variables and other resources of their parent scope.
 
 ***EXAMPLE***
 ```javascript
 //ex
+function outerFunction() {
+  const message = 'Hello World';
+  function innerFunction() {
+    console.log(message);
+  }
+
+  return innerFunction;
+}
+
+const inner = outerFunction();
+inner();
+```
+
+### XI.2 Closure 
+> A closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+***EXAMPLE***
+```javascript
+//ex1:
 function counter()
 {
   let i = 0;
@@ -3943,6 +3991,60 @@ let c = counter();
 console.log(c());         //1
 console.log(c());         //2
 console.log(c());         //3
+
+//ex2:
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+const add2 = makeAdder(2);
+add2(3);                   //5
+add2(5);                   //7
+const add5 = makeAdder(5);
+add5(10);                  //15
+add5(20);                  //25
+
+//ex3:
+function  createIncrement(incBy) {
+  let value = 0;
+  function increment() {
+    value += incBy;
+    console.log(value);
+  }
+  const message = `Current value is ${value}`;
+  function log() {
+    console.log(message);
+  }
+  
+  return [increment, log];
+}
+const [increment, log] = createIncrement(1);
+increment();      //1
+increment();      //2
+increment();      //3
+log();            //0
+
+//to fix the state closure
+function  createIncrement(incBy) {
+  let value = 0;
+  function increment() {
+    value += incBy;
+    console.log(value);
+  }  
+  function log() {
+    const message = `Current value is ${value}`;
+    console.log(message);
+  }
+  
+  return [increment, log];
+}
+const [increment, log] = createIncrement(1);
+increment();      //1
+increment();      //2
+increment();      //3
+log();  
 ```
 
 ---
@@ -4037,22 +4139,22 @@ console.log(sum(6,9));		//Uncaught ReferenceError: sum is not defined
 ```javascript
 //ex1
 x = 5;
-console.log(x);             //5
+console.log(x);           //5
 var x;
 
 //ex2
 var x;
-console.log(x);             //undefined
+console.log(x);           //undefined
 x = 5;
 
 //ex3
 x = 5;
-console.log(x);             //Uncaught ReferenceError: Cannot access 'x' before initialization 							
-let x;						//because x is in Temporal Dead Zone, we cannot use x to assign 5
+console.log(x);           //Uncaught ReferenceError: Cannot access 'x' before initialization 
+let x;						        //because x is in Temporal Dead Zone, we cannot use x to assign 5
 
 //ex4
 x = 5;
-console.log(x);             //Uncaught SyntaxError: Missing initializer in const declaration because x is in Temporal Dead Zone
+console.log(x);           //Uncaught SyntaxError: Missing initializer in const declaration 
 const x;
 
 //ex5
@@ -4065,6 +4167,15 @@ function greeting() {
 console.log(sum(2,3));      //5
 function sum(a, b) {
   return a + b;
+}
+
+//ex7
+let x = 2;
+{
+  {    
+    console.log(x);     //Cannot access 'x' before initialization because hoisting     
+    let x = 10;
+  }    
 }
 ```
 
@@ -4085,7 +4196,187 @@ function counter() {
   }
 }
 ```
+
 ## XI.5 this keyword
+### this in global context
+> 'this' in global context is a global object in both strict mode and non strict mode
+
+***EXAMPLE***
+```javascript
+//ex1
+console.log(this)           //window object
+
+//ex2
+this.message = "Hello World";
+console.log(this.message);  //Hello World
+console.log(window.message);//Hello World
+```
+
+### this in function context
+> 'this' in function context is a global object in non strict mode or an undefined in strict mode
+
+***EXAMPLE***
+```javascript
+//ex1
+function helloWorld() {
+  console.log(this);        //window object
+  this.message = "Hello World";
+}
+helloWorld();
+console.log(this.message);  //Hello World
+console.log(window.message);//Hello World
+
+//ex2
+'use strict';
+function helloWorld() {
+  console.log(this);            //undefined
+  this.message = "Hello World"; //TypeError
+}
+helloWorld();
+
+//ex3
+function hello() {
+  this.mess = "Hello";
+  console.log(this);        //window object
+  function world() {
+    this.world = "World";
+    console.log(this);      //window object
+  }
+  world();
+}
+hello();
+console.log(this.mess);   //Hello
+console.log(window.mess); //Hello
+
+console.log(this.world);  //World
+console.log(window.world);//World
+
+//ex4
+'use strict';
+function hello() {
+  this.mess = "Hello";      //TypeError
+  console.log(this);        //undefined
+  function world() {
+    this.world = "World";   //TypeError
+    console.log(this);      //undefined
+  }
+  world();
+}
+hello();
+
+//except for non strict mode and strict mode are the same
+[1,2,3].forEach((item) => {
+    console.log(this);        //window object
+    this.mess = "Hello World";
+  }); 
+
+console.log(this.mess);       //Hello World
+console.log(window.mess);     //Hello World
+```
+
+### this in an arrow function
+> 'this' in an arrow function is the same as 'this' from outer normal function
+
+***EXAMPLE***
+```javascript
+//ex1
+const helloWorld = () => {
+  console.log(this);         //window object
+  this.message = "Hello World";
+}
+helloWorld();
+console.log(this.message);  //Hello World
+console.log(window.message);//Hello World
+
+//ex2
+'use strict';
+const helloWorld = () => {
+  console.log(this)         //window object
+  this.message = "Hello World";
+}
+helloWorld();
+console.log(this.message);  //Hello World
+console.log(window.message);//Hello World
+
+//ex3
+function hello() {  
+  this.mess = "Hello";
+  console.log(this);        //window
+  const world = () => {
+    this.world = "World";
+    console.log(this);      //window
+  }
+  world();
+}
+hello();
+console.log(this.mess);   //Hello
+console.log(window.mess); //Hello
+
+console.log(this.world);  //World
+console.log(window.world);//World
+
+//ex4
+'use strict';
+function hello() {  
+  this.mess = "Hello";      //TypeError
+  console.log(this);        //undefined
+  const world = () => {
+    this.world = "World";   //TypeError
+    console.log(this);      //undefined
+  }
+  world();
+}
+hello();
+```
+
+### this in a method
+> 'this' of a method is the object of that method
+***EXAMPLE***
+```javascript
+//ex1
+const app = {
+  people : [],
+  set : function(person) {
+    console.log(this === app);      //true
+    this.people.push(person);
+  },
+  get : function(index) {
+    console.log(this === app);      //true
+    return this.people.slice(index, index + 1);
+  },
+  size : function() {
+    console.log(this === app);      //true
+    return this.people.length;
+  }
+}
+
+app.set({firstName: "Doe", lastName: "Joe"})
+app.set({firstName: "Steve", lastName: "Job"})
+app.set({firstName: "Michelle", lastName: "Joe"})
+console.log(app.get(0));
+
+//ex2
+const hi = {
+  message : "Hello World",
+  sayXinChao : function() {
+    console.log(this === hi);       //true
+    console.log(this.message);      //Hello World
+  },  
+  sayHi() {
+    console.log(this === hi);       //true
+    console.log(this.message);      //Hello World
+  },  
+  sayHello : () => {
+    console.log(this === hi);       //true
+    console.log(this.message);      //Hello World
+  }
+}
+
+hi.sayXinChao();
+hi.sayHi();
+hi.sayHello();
+```
+
 
 ## XII. Callback, Arrow Function and IIFE
 ### XII.1 Callback
