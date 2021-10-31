@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Name</title>
+    <style>
+        .image {
+            margin-top: 10px;
+            background-image: url(img/photo.jpeg);
+            width: 0;
+            height: 0;
+            background-repeat: none;
+            background-size: cover;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .show {
+            width: 1170px;
+            height: 840px;
+        }
+    </style>
+</head>
+<body>
+    <button>Hide/Show Image</button>    
+    <div class="image"></div>
+    <script>
+        const buttonEvent = document.querySelector("button");
+        buttonEvent.addEventListener("click", function(){
+            const img = document.querySelector(".image");                          
+            if(img.getAttributeNode("class").value.endsWith("show")) {
+                img.getAttributeNode("class").value = "image";
+            } else {
+                img.getAttributeNode("class").value = "image show";
+            }
+        });
+    </script>
+</body>
+</html>

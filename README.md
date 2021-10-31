@@ -121,23 +121,86 @@
   - [XI.4 Hoisting](#xi4-hoisting)
   - [XI.5 this keyword](#xi5-this-keyword)
   - [XI.6 binding](#xi6-binding)
-- [XII. Callback, Arrow Function and IIFE](#xii-arrow-function-and-iife)
-  - [XII.1 Callback](#xii1-callback)
+- [XII. Function, Arrow Function, Callback and IIFE](#xii-function-arrow-function-callback-and-iife)
+  - [XII.1 Function](#xii1-function)  
   - [XII.2 Arrow Function](#xii2-arrow-function)
-  - [XII.3 IIFE (Immediately Invoked Function Expression)](#xii3-iife-immediately-invoked-function-expression)
+  - [XII.3 Callback](#xii3-callback)
+  - [XII.4 IIFE (Immediately Invoked Function Expression)](#xii4-iife-immediately-invoked-function-expression)
 - [XIII. Promise, Async/Await](#xiii-callback-promise-asyncawait)
   - [XIII.1 Promise](#xiii1-promise)
   - [XIII.2 Asyn/Await](#xiii2-asyn-await)
 - [XIX. ECMAScript 6](#xiv-ecmascript-6)
-  - [XIX.1 Template literals](#xiv1-template-literals)
-  - [XIX.2 Default parameter](#xiv2-default-parameter)
-  - [XIX.3 Enhanced object literals](#xiv3-enhanced-object-literals)
-  - [XIX.4 Destructuring](#xiv4-destructuring)
-  - [XIX.5 Spread Operator](#xiv5-spread-operator)
-  - [XIX.6 Modules](#xiv6-modules)
-- [XX. HTML DOM and jQuery](xvi-unit-test)
-- [XXI. AJAX, JSON, RestAPI, APIs](xvi-unit-test)
-- [XXII. JS Graphic]
+  - [XIX.1 Template literals](#xix1-template-literals)
+  - [XIX.2 Default parameter](#xix2-default-parameter)
+  - [XIX.3 Enhanced object literals](#xix3-enhanced-object-literals)
+  - [XIX.4 Destructuring](#xix4-destructuring)
+  - [XIX.5 Spread Operator](#xix5-spread-operator)
+  - [XIX.6 Modules](#xix6-modules)
+- [XX. HTML DOM](#xx-html-dom)  
+  - [XX.1 Find HTML Elements](#xx1-find-html-elements)
+    - [document.getElememtById](#document-getelememtbyid)
+    - [document.getElementsByTagName](#document-getelementsbytagname)
+    - [document.getElementsByClassName](#document-getelementsbyclassname)
+    - [document.querySelector](#document-queryselector)
+    - [document.querySelectorAll](#document-queryselectorall)
+  - [XX.2 Change HTML Elements](#xx2-change-html-elements)        
+    - [element.id](#element-id)
+    - [element.attribute](#element-attribute)
+    - [element.tagName](#element-tagName)
+    - [element.title](#element-title)  
+    - [element.children](#element-children)
+    - [element.classList](#element-classList)
+    - [element.className](#element-className)
+    - [element.innerText](#element-innerText) 
+    - [element.outerText](#element-outerText)  
+    - [element.innerHTML](#element-innerhtml)
+    - [element.outerHTML](#element-outerHTML)
+    - [element.nodeName](#element-nodeName)
+    - [element.nodeValue](#element-nodeValue)
+    - [element.matches](#element-matches)    
+    - [element.textContent](#element-textContent)
+    - [element.style.property ](#element-style-property )    
+  - [XX.3 Add and delete Elements](#xx3-add-and-delete-elements)
+    - [DOM nodes](#dom-nodes)
+    - [Node Relationships](#node-relationships)    
+    - [document.write](#document-write)
+    - [element.focus](#element-focus)
+    - [document.createElement](#document-createelement)    
+    - [element.setAttribute](#element-setattribute)
+    - [element.getAttribute](#element-getattribute)    
+    - [element.hasAttribute](#element-hasattribute)
+    - [element.removeAttribute](#element-removeAttribute)
+    - [element.setAttributeNode](#element-setattributenode)
+    - [element.getAttributeNode](#element-getattributenode)
+    - [element.removeAttributeNode](#element-removeattributenode)
+    - [node.appendChild ](#node-appendchild)
+    - [node.removeChild](#node-removechild)
+    - [node.replaceChild](#node-replacechild)
+    - [node.firstChild](#node-firstchild)
+    - [node.lastChild](#node-lastchild)    
+    - [node.nextSibling](#node-nextSibling)
+    - [node.previousSibling](#node-previousSibling)
+    - [node.parentNode](#node-parentNode)
+    - [node.parentElement](#node-parentElement)
+    - [node.childNodes](#node-childNodes)
+    - [node.insertBefore](#node-insertBefore)
+    - [node.hasChildNodes](#node-hasChildNodes)
+    - [element.append ](#element-append)
+    - [element.remove ](#element-remove)
+    - [element.prepend ](#element-prepend)
+    - [element.before ](#element-before)
+    - [element.after ](#element-after)
+    - [element.firstElementChild](#element-firstElementChild)
+    - [element.lastElementChild](#element-lastElementChild)
+    - [element.previousElementSibling](#element-previousElementSibling)
+    - [element.nextElementSibling](#nelement-extElementSibling)
+  - [XX.4 Add Events Handlers](#xx4-add-events-handlers)  
+    - [element.onclick](#element-onclick)
+    - [element.addEventListener](#element-addeventlistener)    
+    - [element.removeEventListener](#element-removeEventListener)    
+- [XXI. jQuery](#xxi-jquery)  
+- [XXII. AJAX, JSON, RestAPI, APIs](xvi-unit-test)
+- [XXIII. JS Graphic]
 # References
 - https://udemy.com/
 - https://fullstack.edu.vn/
@@ -3861,12 +3924,12 @@ try {
 
 ## XI. Scope, Closure, Strict Mode, Hoisting, and this keyword
 ### XI.1 Scope 
-> There are 5 types of scopes:
->   Block scope
->   Function scope
->   Module scope
->   Global  scope
->   Lexical scope
+- There are 5 types of scopes:
+  - Block scope
+  - Function scope
+  - Module scope
+  - Global  scope
+  - Lexical scope
 
 #### Block scope
 > A code block in JavaScript defines a scope for variables declared using let and const
@@ -4049,7 +4112,9 @@ log();
 
 ---
 ***NOTE***
+
 - Show private feature
+
 ***EXAMPLE***
 ```javascript
 //Assuming we want to add, edit, or delete a person in a people array
@@ -4845,8 +4910,8 @@ Promise.all([promise_1, promise_2])
 })
 //[1,2,3,4,5]
 ```
-## XIV. ECMAScript 6
-### XIV.1 Template literals
+## XIX. ECMAScript 6
+### XIX.1 Template literals
 > Use back-ticks (``) rather than the quotes ("") to define a string
 
 ***EXAMPLE***
@@ -4874,7 +4939,7 @@ var total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
 console.log(total);                	//Total: 12.50
 ```
 
-### XIV.2 Default parameter
+### XIX.2 Default parameter
 > Assign a default value to the parameter
 
 ***EXAMPLE***
@@ -4886,7 +4951,7 @@ function sum(x = 1, y = 2) {
 
 sum();              				//3
 ```
-### XIV.3 Enhanced object literals
+### XIX.3 Enhanced object literals
 > Shorter way to define an object
 
 ***EXAMPLE***
@@ -4926,7 +4991,7 @@ var person = {
 };
 ```
 
-### XIV.4 Destructuring
+### XIX.4 Destructuring
 > Destructing arrays
 
 ***EXAMPLE***
@@ -4975,7 +5040,7 @@ function myVehicle({type, color, brand, model}) {
 }
 ```
 
-### XIV.5 Spread Operator
+### XIX.5 Spread Operator
 > The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
 
 ***EXAMPLE***
@@ -5008,7 +5073,1027 @@ var myUpdatedVehicle = {...myVehicle, ...updateMyVehicle};
 console.log(myUpdatedVehicle);
 ```
 
-### XIV.6 Modules 
+### XIX.6 Modules 
 [Read More](https://javascript.info/modules-intro)
 
 Note: if(a), the value of variable a is empty string, 0, null, false, undefined, NaN
+
+## XX. HTML DOM
+> When a webpage is loaded, the browser will create a **Document Object Model** called DOM. The HTML elements are ***object***. Each HTML element contains properties and events and is managed by DOM, so the HTML DOM can *get, change, add, or delete* HTML elements. HTML DOM methods are actions. HTML DOM properties are values.
+
+***EXAMPLE***
+```javascript
+<script>
+    document.getElementById("demo").innerHTML = "Hello World!";     //getElementById is a method, innerHTML is a property
+</script>
+```
+### XX.1 Find HTML Elements
+
+#### document.getElememtById
+> Find an element by element id
+
+***SYNTAX***
+```javascript
+document.getElementById("id")
+```
+
+***EXAMPLE***
+```html
+<div id="ex-id"></div>
+```
+```javascript
+//ex: show "Hello getElementById" text into div
+document.getElementById("ex-id").innerHTML = "Hello getElementById";
+```
+
+#### document.getElementsByTagName
+> Find an element by class name
+
+***SYNTAX***
+```javascript
+document.getElementsById("class name")
+```
+
+***EXAMPLE***
+```html
+<div class="ex-class"></div>
+<div class="ex-class"></div>
+<div class="ex-class"></div>
+```
+```javascript
+//ex: show "Hello getElementsByClassName" text into div class dom
+var exClasses = document.getElementsByClassName("ex-class");
+for(let exClass of exClasses){
+    exClass.innerHTML = "Hello getElementsByClassName";
+}        
+```
+
+#### document.getElementsByClassName
+> Find an element by tag name
+
+***SYNTAX***
+```javascript
+document.getElementsByTagName("tag name")
+```
+
+***EXAMPLE***
+```html
+<h4></h4>
+<h4></h4>
+<h4></h4>
+```
+```javascript
+//ex: show "Hello getElementsByTagName" text into h4
+var h4s = document.getElementsByTagName("h4");
+for(let h4 of h4s){
+    h4.innerHTML = "Hello getElementsByTagName";
+}     
+```
+
+#### document.querySelector
+> Find an element by CSS Selector
+***SYNTAX***
+```javascript
+document.querySelector("selector")		//selector can be id, tag, or class
+```
+
+***EXAMPLE***
+```html
+<div class="selector1"></div>
+<div class="selector"></div>
+<div class="selector2"></div>
+```
+```javascript
+//ex: show "Hello querySelector"
+document.querySelector(".selector").innerHTML = "Hello querySelector";
+``` 
+
+#### document.querySelectorAll
+> Find an element by CSS Selectors
+***SYNTAX***
+```javascript
+document.querySelectorAll("selectors")		//selector can be id, tag, or class
+```
+
+***EXAMPLE***
+```html
+<p></p>
+<p></p>
+<p></p>
+```
+```javascript
+//ex: show "Hello querySelectorAll"
+var ps = document.querySelectorAll("p");
+for(let p of ps){
+	p.innerHTML = "Hello querySelectorAll";
+}   
+``` 
+
+***NOTE***
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Description</th>        
+    </tr>
+    <tr>
+        <td>getelememtbyid</td>
+        <td>Find an element by element id</td>        
+    </tr>
+    <tr>
+        <td>getelementsbytagname</td>
+        <td>Find elements by tag name</td>        
+    </tr>
+    <tr>
+        <td>getelementsbyclassname</td>
+        <td>Find elements by class name</td>        
+    </tr>
+    <tr>
+        <td>queryselector</td>
+        <td>Find a selector</td>        
+    </tr>
+    <tr>
+        <td>queryselectorall</td>
+        <td>Find all selectors</td>        
+    </tr>
+</table>
+
+
+### XX.2 Change HTML Elements
+
+#### element.innerHTML
+> Change HTML content
+
+***SYNTAX***
+```javascript
+// Set the innerHTML property:
+HTMLElementObject.innerHTML = text
+
+// Return the innerHTML property
+HTMLElementObject.innerHTML;
+```
+
+***EXAMPLE***
+```html
+<div id="demo-innerHTML"></div>
+```
+```javascript
+//ex: show "Hello innerHTML"
+document.getElementById("demo-innerHTML").innerHTML = "Hello innerHTML";
+```
+
+#### element.attribute
+> Change the value of an HTML attribuite
+
+***SYNTAX***
+```javascript
+// Set the attribute property:
+HTMLElementObject.attribute = text
+
+// Return the attribute property
+HTMLElementObject.attribute;
+```
+
+***EXAMPLE***
+```html
+<img id="demo-attribute" src="smiley.gif"/>
+```
+```javascript
+//ex: set source for image
+document.getElementById("demo-attribute").src = "helloworld.jpg";
+```
+
+#### element.style.property
+> Change HTML style
+
+***SYNTAX***
+```javascript
+// Set style properties
+element.style.property = value
+
+// Return style properties
+element.style.property
+```
+
+***EXAMPLE***
+```html
+<div id="demo-property" >Hello Property</div>
+```
+```javascript
+//ex: show "Hello getElementById" text into div
+document.getElementById("demo-property").style.color = "blue";
+```
+
+#### element.setAttribute
+> Change HTML style
+
+***SYNTAX***
+```javascript
+// Set attribute
+element.setAttribute(attributename, attributevalue)
+```
+
+***EXAMPLE***
+```html
+<div id="demo-setattribute" >Hello Property</div>
+```
+```javascript
+//ex: show "Hello getElementById" text into div
+document.getElementById("ddemo-setattribute").setAttribute(color, "blue");
+```
+
+### XX.3 Add and delete Elements
+
+#### DOM nodes
+- Everything in an HTML document is a node:
+  - The entire document is a document node
+  - Every HTML element is an element node
+  - The text inside HTML elements are text nodes
+  - Every HTML attribute is an attribute node (deprecated)
+  - All comments are comment nodes
+
+#### Node Relationships
+- The nodes in the node tree have a hierarchical relationship to each other. The terms parent, child, and sibling are used to describe the relationships.
+  - In a node tree, the top node is called the root (or root node)
+  - Every node has exactly one parent, except the root (which has no parent)
+  - A node can have a number of children
+  - Siblings (brothers or sisters) are nodes with the same parent
+
+***EXAMPLE***
+```html
+<html>
+
+  <head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+  </body>
+
+</html>
+```
+> <html> is the root node
+> <html> has no parents
+> <html> is the parent of <head> and <body>
+> <head> is the first child of <html>
+> <body> is the last child of <html>
+> <head> has one child: <title>
+> <title> has one child (a text node): "DOM Tutorial"
+> <body> has two children: <h1> and <p>
+> <h1> has one child: "DOM Lesson one"
+> <p> has one child: "Hello world!"
+> <h1> and <p> are siblings
+
+#### Navigating Between Nodes
+- You can use the following node properties to navigate between nodes with JavaScript:
+  - parentNode
+  - childNodes[nodenumber]
+  - firstChild
+  - lastChild
+  - nextSibling
+  - previousSibling
+
+***EXAMPLE***
+```html
+<html>  
+  <head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+  </body>
+
+</html>
+```
+> <html> is parentNode of <head> and <body>
+> h1, #text, p, #text are childNodes of <body>
+> <head> is firstChild of <html>
+> <body> is lastChild of <html>
+> <body> is nextSibling of <head>
+> <head> is previousSibling of <body>
+
+
+#### document.createElement
+> Create an element
+
+***SYNTAX***
+```javascript
+//Create an attribute
+document.createElement(attributename)
+```
+
+***EXAMPLE***
+```html
+<div class="container"></div>
+```
+```javascript
+const paragraph = document.createElement("p");
+const content = document.createTextNode("Hello World");
+paragraph.appendChild(content);
+const container = document.querySelector(".container");
+container.appendChild(paragraph);
+```
+
+> OUTPUT: 
+
+```html
+<div class="container">
+  <p>Hello World</p>
+</div>
+```
+
+#### node.appendChild
+> Appends a node as the last child of a node
+
+***SYNTAX***
+```javascript
+node.appendChild(node)  //node not a string
+```
+
+***EXAMPLE***
+```html
+<div class="container">
+  <p>Hello</p>
+</div>
+```
+```javascript
+const container = document.querySelector(".container");
+
+//<h3 style='color:red;'>Hello World</h3>
+const node = document.createElement("h3");        
+const innerText = document.createTextNode(" World!!!");
+node.style.color = 'red';        
+node.appendChild(innerText);
+
+container.appendChild(node);    
+```
+
+> OUTPUT: 
+
+```html
+<div class="container">
+  <p>Hello</p>
+  <h3 style="color: red;"> World!!!</h3>
+</div>
+```
+
+#### node.removeChild
+> Removes a specified child node of the specified element
+
+***SYNTAX***
+```javascript
+node.removeChild(node)  //node not a string
+```
+
+***EXAMPLE***
+```html
+<div class="container">
+  <p>Hello</p>
+  <h4>World</h4>
+  <h5>World</h5>
+</div>
+```
+```javascript
+const container = document.querySelector(".container");        
+const childrenNodes = container.childNodes;     //[p, text, h4, text, h5, text]
+container.removeChild(childrenNodes[5]);    
+```
+
+> OUTPUT: 
+
+```html
+<div class="container">
+  <p>Hello</p>
+  <h4>World</h4>
+  
+</div>
+```
+
+#### node.replaceChild
+> replaces a child node with a new node
+
+***SYNTAX***
+```javascript
+node.replaceChild(newnode, oldnode) //node not a string
+```
+
+***EXAMPLE***
+```html
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+```
+```javascript
+const list = document.querySelector("ul");        
+const childrenNodes = list.childNodes;     //[li, text, li, text, li, text]
+const paragraph = document.createElement("p");
+const innerText = document.createTextNode("Coca-Cola");
+paragraph.appendChild(innerText);
+list.replaceChild(paragraph, childrenNodes[3]);
+```
+
+> OUTPUT: 
+
+```html
+<ul>
+  <li>Coffee</li>
+  <p>Coca-Cola</p>
+  <li>Milk</li>
+</ul>
+```
+
+#### document.write
+> writes HTML expressions or JavaScript code to a document
+
+***SYNTAX***
+```javascript
+document.write(exp1, exp2, exp3, ...)
+```
+
+***EXAMPLE***
+```javascript
+document.open();
+document.write("<h1>Hello</h1>","<h2>Hello</h2>","<p>Hello</p>");
+document.close();
+```
+
+> OUTPUT: 
+
+```html
+<h1>Hello</h1>
+<h2>Hello</h2>
+<p>Hello</p>
+```
+
+#### element.childNodes
+> A NodeList object, representing a collection of nodes
+
+***SYNTAX***
+```javascript
+element.childNodes
+```
+
+***EXAMPLE***
+```html
+<ul>
+    <li>Coffee</li>
+    <p>Coca-Cola</p>
+    <li>Milk</li>
+</ul>
+```
+```javascript
+const list = document.querySelector("ul");
+const childrenNodes = list.childNodes;     //[li, text, p, text, li, text]
+list.removeChild(childrenNodes[3]);
+```
+
+> OUTPUT: 
+
+```html
+<ul>
+  <li>Coffee</li>
+  
+  <li>Milk</li>
+</ul>
+```
+
+#### element.children
+> A collection of an element's child elements, as an HTMLCollection object
+
+***SYNTAX***
+```javascript
+element.children
+```
+
+***EXAMPLE***
+```html
+<ul>
+  <li>Coffee</li>
+  <p>Coca-Cola</p>
+  <li>Milk</li>
+</ul>
+```
+```javascript
+const list = document.querySelector("ul");
+const children = list.children;        //[li, p, li]
+list.removeChild(children[1]);
+```
+
+> OUTPUT: 
+
+```html
+<ul>
+  <li>Coffee</li>
+  
+  <li>Milk</li>
+</ul>
+```
+
+#### element.classList
+> Show the class name(s) of an element, as a DOMTokenList object
+
+***SYNTAX***
+```javascript
+element.classList
+```
+
+***Methods***
+<table>
+    <tr>
+        <td>Method</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>add(class1, class2, ...)</td>
+        <td>Adds one or more class names to an element</td>
+    </tr>
+    <tr>
+        <td>contains(class)</td>
+        <td>Returns a Boolean value, indicating whether an element has the specified class name</td>
+    </tr>
+    <tr>
+        <td>item(index)</td>
+        <td>Returns the class name with a specified index number from an element. Index starts at 0</td>
+    </tr>
+    <tr>
+        <td>remove(class1, class2, ...)</td>
+        <td>Removes one or more class names from an element</td>
+    </tr>
+    <tr>
+        <td>toggle(class, true|false)</td>
+        <td>Toggles between a class name for an element</td>
+    </tr>
+</table>
+
+***EXAMPLE***
+```css
+.image {
+  margin-top: 10px;
+  background-image: url(img/photo.jpeg);
+  width: 0;
+  height: 0;
+  background-repeat: none;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.show {
+  width: 1170px;
+  height: 840px;
+}
+```
+```html
+<button>Hide/Show Image</button>    
+<div class="image"></div>
+```
+```javascript
+const buttonEvent = document.querySelector("button");
+buttonEvent.addEventListener("click", function(){
+    const img = document.querySelector(".image").classList;        
+    if(img.contains("show")) {                
+        img.remove("show");
+    } else {                
+        img.add("show");
+    }
+    //or img.toggle("show");
+});
+```
+
+> OUTPUT: After click button
+
+```html
+<button>Hide/Show Image</button>    
+<div class="image show"></div>
+```
+
+#### element.className
+> Sets or gets the class name of an element
+
+***SYNTAX***
+```javascript
+// Set the className property
+element.className = class
+// Return the className property
+element.className
+```
+
+***EXAMPLE***
+```css
+.image {
+  margin-top: 10px;
+  background-image: url(img/photo.jpeg);
+  width: 0;
+  height: 0;
+  background-repeat: none;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.show {
+  width: 1170px;
+  height: 840px;
+}
+```
+```html
+<button>Hide/Show Image</button>    
+<div class="image"></div>
+```
+```javascript
+const buttonEvent = document.querySelector("button");
+buttonEvent.addEventListener("click", function(){
+    const classList = document.querySelector(".image");              
+    if(classList.className.endsWith("show")) {
+        classList.className = "image";
+    } else {
+        classList.className = "image show";
+    }
+});
+```
+
+> OUTPUT: After click button
+
+```html
+<button>Hide/Show Image</button>    
+<div class="image show"></div>
+```
+
+#### element.focus
+> Gives focus to an element
+
+***SYNTAX***
+```javascript
+element.focus()
+```
+
+***EXAMPLE***
+```html
+<input type="text" class="username" placeholder="Username..."/>
+<input type="password" class="password" placeholder="Password..."/>
+<button>Focus on input password</button>
+```
+```javascript
+const buttonEvent = document.querySelector("button");
+const passwordInput = document.querySelector(".password");
+buttonEvent.addEventListener("click", function(){
+  passwordInput.focus();
+});
+```
+
+#### getAttribute
+> Gets the value of the attribute with the specified name, of an element
+
+***SYNTAX***
+```javascript
+element.getAttribute(attributename)
+```
+
+***EXAMPLE***
+```css
+.image {
+  margin-top: 10px;
+  background-image: url(img/photo.jpeg);
+  width: 0;
+  height: 0;
+  background-repeat: none;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.show {
+  width: 1170px;
+  height: 840px;
+}
+```
+```html
+<button>Hide/Show Image</button> 
+<div class="image"></div>
+```
+```javascript
+const buttonEvent = document.querySelector("button");
+buttonEvent.addEventListener("click", function(){
+    const img = document.querySelector(".image");              
+    if(img.getAttribute("class").endsWith("show")) {
+      img.setAttribute("class","image");
+    } else {
+      img.setAttribute("class","image show");      
+    }
+});
+```
+
+> OUTPUT: After click button
+
+```html
+<button>Hide/Show Image</button>    
+<div class="image show"></div>
+```
+
+#### getAttributeNode
+> Gets the attribute node with the specified name of an element, as an Attr object
+
+***SYNTAX***
+```javascript
+element.getAttributeNode(attributename)
+```
+
+***EXAMPLE***
+```css
+.image {
+  margin-top: 10px;
+  background-image: url(img/photo.jpeg);
+  width: 0;
+  height: 0;
+  background-repeat: none;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.show {
+  width: 1170px;
+  height: 840px;
+}
+```
+```html
+<button>Hide/Show Image</button> 
+<div class="image"></div>
+```
+```javascript
+const buttonEvent = document.querySelector("button");
+buttonEvent.addEventListener("click", function(){
+    const img = document.querySelector(".image");                          
+    if(img.getAttributeNode("class").value.endsWith("show")) {
+        img.getAttributeNode("class").value = "image";
+    } else {
+        img.getAttributeNode("class").value = "image show";
+    }
+});
+```
+
+> OUTPUT: After click button
+
+```html
+<button>Hide/Show Image</button>    
+<div class="image show"></div>
+```
+
+#### id
+> Sets or returns the id of an element
+
+***SYNTAX***
+```javascript
+//Sets the id property
+HTMLElementObject.id = id
+//Gets the id property
+HTMLElementObject.id
+```
+
+***EXAMPLE***
+```html
+<button type="button" id="demo-id">Set new id</button>
+<div id="new-id">Change New ID</div>
+```
+```javascript
+//ex: change value of id
+document.getElementById("demo-id").addEventListener("click", function(){
+    document.getElementById("new-id").id = "newid";
+});
+```
+
+#### innerText
+> Sets or returns the text content of the specified node, and all its descendants
+
+***SYNTAX***
+```javascript
+//Sets the text content of a node
+node.innerText = text
+//Gets the text content of a node
+node.innerText
+```
+
+***EXAMPLE***
+```html
+<div id="demo-innerText"></div>
+```
+```javascript
+//ex: change value of id
+document.getElementById("demo-innerText").innerText = "Change InnerText";
+```
+
+#### insertBefore
+> Inserts a node as a child, right before an existing child, which you specify
+
+***SYNTAX***
+```javascript
+node.insertBefore(newnode, existingnode)
+```
+
+***EXAMPLE***
+```html
+<button type="button" id="demo-insertBefore">Add A Node Before Node 2</button>
+<ul id="myList-insertBefore">
+    <li>Node 1</li>
+    <li>Node 2</li>
+</ul>
+```
+```javascript
+//ex: add li node to ul#myList-appendChild
+document.getElementById("demo-insertBefore").addEventListener("click", function(){
+    //create node li
+    let node = document.createElement("li");
+    //create text for li node
+    let textNode = document.createTextNode("Node");
+    //add text to li node
+    node.appendChild(textNode);
+    //get list
+    let list = document.getElementById("myList-insertBefore");
+    //Insert Node at index 0
+    document.getElementById("myList-insertBefore").insertBefore(node,list.childNodes[0]);
+});
+```
+
+
+
+
+#### addEventListener
+> Adds an event handler to the specified element
+
+***SYNTAX***
+```javascript
+element.addEventListener(event, function, useCapture)
+```
+
+***EXAMPLE***
+```html
+<button type="button" id="demo-addEventListener">Click Me</button>
+```
+```javascript
+//ex: change the text of the button
+document.getElementById("demo-addEventListener").addEventListener("click", function(){
+    this.innerHTML = "Hello addEventListener";
+});
+```
+
+***NOTE***
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>        
+    </tr>
+    <tr>
+        <td>innerHTML</td>
+        <td>Change the inner HTML of an element</td>        
+    </tr>    
+    <tr>
+        <td>style.property</td>
+        <td>Change the style of an HTML element</td>        
+    </tr>
+    <tr>
+        <td>addEventListener</td>
+        <td>Attaches an event handler to the specified element</td>        
+    </tr>
+    <tr>
+        <td>appendChild</td>
+        <td>Appends a node as the last child of a node</td>        
+    </tr>    
+    <tr>
+        <td>childNodes</td>
+        <td>Returns a collection of a node's child nodes</td>        
+    </tr>
+    <tr>
+        <td>children</td>
+        <td>Returns a collection of an element's child elements, as an HTMLCollection object</td>        
+    </tr>
+    <tr>
+        <td>classList</td>
+        <td>Returns the class name(s) of an element</td>        
+    </tr>
+    <tr>
+        <td>className</td>
+        <td>Sets or returns the class name of an element</td>        
+    </tr>        
+    <tr>
+        <td>focus</td>
+        <td>Give focus to an element</td>        
+    </tr>
+    <tr>
+        <td>getAttribute</td>
+        <td>Returns the value of the attribute with the specified name, of an element</td>        
+    </tr>
+    <tr>
+        <td>getAttributeNode</td>
+        <td>Returns the attribute node with the specified name of an element, as an Attr object</td>        
+    </tr>    
+    <tr>
+        <td>id</td>
+        <td>The id property sets or returns the id of an element</td>        
+    </tr>
+    <tr>
+        <td>innerText</td>
+        <td>Sets or returns the text content of the specified node, and all its descendants</td>        
+    </tr>
+    <tr>
+        <td>insertBefore</td>
+        <td>Inserts a the specified element into a specified position</td>        
+    </tr>    
+    <tr>
+        <td>lastChild</td>
+        <td>Returns the last child node of the specified node, as a Node object</td>        
+    </tr>
+    <tr>
+        <td>lastElementChild</td>
+        <td>Returns the last child element of the specified element</td>        
+    </tr>
+    <tr>
+        <td>matches</td>
+        <td>Returns a Boolean value indicating whether an element is matched by a specific CSS selector or not</td>        
+    </tr>
+    <tr>
+        <td>nextSibling</td>
+        <td>Returns the node immediately following the specified node, in the same tree level</td>        
+    </tr>
+    <tr>
+        <td>nextElementSibling</td>
+        <td>Returns the element immediately following the specified element, in the same tree level</td>        
+    </tr>
+    <tr>
+        <td>nodeName</td>
+        <td>Returns the name of the specified node</td>        
+    </tr>
+    <tr>
+        <td>nodeValue</td>
+        <td>Sets or returns the node value of the specified node</td>        
+    </tr>
+    <tr>
+        <td>outerHTML</td>
+        <td>Sets or returns the HTML element and all it's content, including the start tag, it's attributes, and the end tag</td>        
+    </tr>
+    <tr>
+        <td>outerText</td>
+        <td>Sets or returns the text content of the specified node</td>        
+    </tr>
+    <tr>
+        <td>parentNode</td>
+        <td>Returns the parent node of the specified node, as a Node object</td>        
+    </tr>
+    <tr>
+        <td>parentElement</td>
+        <td>Returns the parent element of the specified element</td>        
+    </tr>
+    <tr>
+        <td>previousSibling</td>
+        <td>Returns the previous node of the specified node, in the same tree level</td>        
+    </tr>
+    <tr>
+        <td>previousElementSibling</td>
+        <td>Returns the previous element of the specified element, in the same tree level</td>        
+    </tr>
+    <tr>
+        <td>remove</td>
+        <td>Removes the specified element from the DOM</td>        
+    </tr>
+    <tr>
+        <td>removeAttribute</td>
+        <td>Removes the specified attribute from an element</td>        
+    </tr>
+    <tr>
+        <td>removeAttributeNode</td>
+        <td>Removes the specified attribute from an element, and returns the removed attribute, as an Attr Node object</td>        
+    </tr>
+    <tr>
+        <td>removeChild</td>
+        <td>Removes a specified child node of the specified element</td>        
+    </tr>
+    <tr>
+        <td>removeEventListener</td>
+        <td>Removes an event handler that has been attached with the addEventListener() method</td>        
+    </tr>
+    <tr>
+        <td>replaceChild</td>
+        <td>Replaces a child node with a new node</td>        
+    </tr>
+    <tr>
+        <td>setAttribute</td>
+        <td>Adds the specified attribute to an element, and gives it the specified value</td>        
+    </tr>
+    <tr>
+        <td>setAttributeNode</td>
+        <td>Adds the specified attribute node to an element</td>        
+    </tr>
+    <tr>
+        <td>tagName</td>
+        <td>Returns the tag name of the element</td>        
+    </tr>
+    <tr>
+        <td>textContent</td>
+        <td>Sets or returns the text content of the specified node, and all its descendants</td>        
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>Sets or returns the value of the title attribute of an element</td>        
+    </tr>
+</table>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replace Child</title>
+  </head>
+  <body>
+    <ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+    <script>
+        const list = document.querySelector("ul");        
+        const childrenNodes = list.childNodes;     //li, #text, li, #text, li, #text 
+        const paragraph = document.createElement("p");
+        const innerText = document.createTextNode("Coca-Cola");
+        paragraph.appendChild(innerText);
+        list.replaceChild(paragraph, childrenNodes[3]);
+    </script>
+  </body>
+</html>

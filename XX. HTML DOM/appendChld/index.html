@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Child</title>
+</head>
+<body>
+    <div class="container">
+        <p>Hello</p>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+
+        //<h3 style='color:red;'>Hello World</h3>
+        const node = document.createElement("h3");        
+        const innerText = document.createTextNode(" World!!!");
+        node.style.color = 'red';        
+        node.appendChild(innerText);
+        
+        container.appendChild(node);
+    </script>
+</body>
+</html>
