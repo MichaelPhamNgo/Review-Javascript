@@ -5788,17 +5788,17 @@ document.querySelector("div").style.color = "blue";
 
 </html>
 ```
-> <html> is the root node
-> <html> has no parents
-> <html> is the parent of <head> and <body>
-> <head> is the first child of <html>
-> <body> is the last child of <html>
-> <head> has one child: <title>
-> <title> has one child (a text node): "DOM Tutorial"
-> <body> has two children: <h1> and <p>
-> <h1> has one child: "DOM Lesson one"
-> <p> has one child: "Hello world!"
-> <h1> and <p> are siblings
+> &lt;html&gt; is the root node
+> &lt;html&gt; has no parents
+> &lt;html&gt; is the parent of &lt;head&gt; and &lt;body&gt;
+> &lt;head&gt; is the first child of &lt;html&gt;
+> &lt;body&gt; is the last child of &lt;html&gt;
+> &lt;head&gt; has one child: &lt;title&gt;
+> &lt;title&gt; has one child (a text node): "DOM Tutorial"
+> &lt;body&gt; has two children: &lt;h1&gt; and &lt;p&gt;
+> &lt;h1&gt; has one child: "DOM Lesson one"
+> &lt;p&gt; has one child: "Hello world!"
+> &lt;h1&gt; and &lt;p&gt; are siblings
 
 #### Navigating Between Nodes
 - You can use the following node properties to navigate between nodes with JavaScript:
