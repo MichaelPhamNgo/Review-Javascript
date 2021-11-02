@@ -154,7 +154,7 @@
     - [element.className](#element-className)
     - [element.innerText](#element-innerText) 
     - [element.outerText](#element-outerText)  
-    - [element.innerHTML](#element-innerhtml)
+    - [node.innerHTML](#node-innerhtml)
     - [element.outerHTML](#element-outerHTML)
     - [element.nodeName](#element-nodeName)
     - [element.nodeValue](#element-nodeValue)
@@ -5516,8 +5516,8 @@ buttonEvent.addEventListener("click", function(){
 <div class="image show"></div>
 ```
 
-#### element.innerText
-> Sets or returns the text content of the specified node, and all its descendants
+#### node.innerText
+> Sets or gets the text content of the specified node, and all its descendants
 
 ***SYNTAX***
 ```javascript
@@ -5529,45 +5529,212 @@ node.innerText
 
 ***EXAMPLE***
 ```html
-<div id="demo-innerText"></div>
+<button onclick="getInnerText()">Get InnerText</button>
+<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
 ```
 ```javascript
-//ex: change value of id
-document.getElementById("demo-innerText").innerText = "Change InnerText";
+function getInnerText() {
+  console.log(document.querySelector("p").innerText);   //This element has extra spacing and contains a span element.
+}
 ```
 
 #### element.outerText
 
-#### element.innerHTML
-> Change HTML content
+> Sets or gets the HTML element and all it's content
 
 ***SYNTAX***
 ```javascript
-// Set the innerHTML property:
-HTMLElementObject.innerHTML = text
-
-// Return the innerHTML property
-HTMLElementObject.innerHTML;
+//Sets the outerHTML property
+element.outerHTML = text
+//Gets the outerHTML property
+element.outerHTML
 ```
 
 ***EXAMPLE***
 ```html
-<div id="demo-innerHTML"></div>
+<button onclick="getOuterText()">Get OuterText</button>
+<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
 ```
 ```javascript
-//ex: show "Hello innerHTML"
-document.getElementById("demo-innerHTML").innerHTML = "Hello innerHTML";
+function getOuterText() {
+  console.log(document.querySelector("p").outerHTML);   //This element has extra spacing and contains a span element.
+}
+```
+
+#### element.innerHTML
+> Sets or gets the HTML content (inner HTML) of an element
+
+***SYNTAX***
+```javascript
+// Sets the innerHTML property:
+element.innerHTML = text
+
+// Gets the innerHTML property
+element.innerHTML;
+```
+
+***EXAMPLE***
+```html
+<button>Get InnerHTML</button>
+<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+```javascript
+document.querySelector("button").addEventListener('click', function(){
+  console.log(document.querySelector("p").innerHTML);     //   This element has extra spacing   and contains <span>a span element</span>.
+})
 ```
 
 #### element.outerHTML
 
+> Sets or gets the HTML element and all it's content, including the start tag, it's attributes, and the end tag
+
+***SYNTAX***
+```javascript
+// Sets the outerHTML property:
+element.outerHTML = text
+
+// Gets the outerHTML property
+element.outerHTML;
+```
+
+***EXAMPLE***
+```html
+<button>Get outerHTML</button>
+<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+```javascript
+document.querySelector("button").addEventListener('click', function(){
+  console.log(document.querySelector("p").outerHTML);     //<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
+})
+```
+
 #### element.nodeName
 
-#### element.nodeValue
+> Returns the name of the specified node.
+
+***SYNTAX***
+```javascript
+node.nodeName
+```
+
+***EXAMPLE***
+```html
+<div class="container">
+  <p>This is a paragraph</p>
+  <h1>This is a paragraph</h1>
+  <h2>This is a paragraph</h2>
+  <h3>This is a paragraph</h3>
+</div>
+```
+```javascript
+const innerContainer = document.querySelector(".container").children;
+for(let i = 0; i < innerContainer.length; ++i) {
+  console.log(innerContainer[i].nodeName);  //P H1 H2 H3
+}
+```
+
+#### node.nodeValue
+
+> Sets or gets the node value of the specified node
+
+***SYNTAX***
+```javascript
+// Sets the nodeValue property:
+node.nodeValue = value
+
+// Gets the nodeValue property
+node.nodeValue
+```
+
+***EXAMPLE***
+```html
+<div class="container">
+  <p>This is a paragraph</p>
+  <h1>This is a h1</h1>
+  <h2>This is a h2</h2>
+  <h3>This is a h3</h3>
+</div>
+```
+```javascript
+const innerContainer = document.querySelector(".container").children;
+for(let i = 0; i < innerContainer.length; ++i) {
+  console.log(innerContainer[i].childNodes[0].nodeValue);
+}
+/*
+ * This is a paragraph
+ * This is a h1
+ * This is a h2
+ * This is a h3
+ * /
+```
 
 #### element.matches
 
-#### element.textContent
+> Returns a Boolean value indicating whether an element is matched by a specific CSS selector or not.
+
+***SYNTAX***
+```javascript
+element.matches(selectors)  //selectors: id, classes, types, attributes, values of attributes
+```
+
+***EXAMPLE***
+```html
+<div class="container">
+  <p class="red">This is a paragraph</p>
+  <h1 class="green">This is a h1</h1>
+  <h2 class="blue">This is a h2</h2>
+  <h3 class="orange">This is a h3</h3>
+</div>
+```
+```javascript
+const innerContainer = document.querySelector(".container").children;
+for(let i = 0; i < innerContainer.length; ++i) {
+  if(innerContainer[i].matches('.red')) {
+    innerContainer[i].style.color = 'red';
+  } else if(innerContainer[i].matches('.green')) {
+    innerContainer[i].style.color = 'green';
+  } else if(innerContainer[i].matches('.blue')) {
+    innerContainer[i].style.color = 'blue';
+  } else if(innerContainer[i].matches('.orange')) {
+    innerContainer[i].style.color = 'orange';
+  }
+}
+```
+
+> OUTPUT: 
+
+```html
+<div class="container">
+  <p class="red" style="color: red;">This is a paragraph</p>
+  <h1 class="green" style="color: green;">This is a h1</h1>
+  <h2 class="blue" style="color: blue;">This is a h2</h2>
+  <h3 class="orange" style="color: orange;">This is a h3</h3>
+</div>
+```
+
+#### node.textContent
+
+> Sets or gets the text content of the specified node, and all its descendants
+
+***SYNTAX***
+```javascript
+// Sets the text content of a node
+node.textContent = text
+
+// Gets the text content of a node
+node.outerHTML;
+```
+
+***EXAMPLE***
+```html
+<button>Get textContent</button>
+<p>   This element has extra spacing   and contains <span>a span element</span>.</p>
+```
+```javascript
+document.querySelector("button").addEventListener('click', function(){
+  console.log(document.querySelector("p").textContent);     //   This element has extra spacing   and contains a span element.
+})
+```
 
 #### element.style.property
 > Change HTML style
@@ -5583,11 +5750,10 @@ element.style.property
 
 ***EXAMPLE***
 ```html
-<div id="demo-property" >Hello Property</div>
+<div>Hello Property</div>
 ```
 ```javascript
-//ex: show "Hello getElementById" text into div
-document.getElementById("demo-property").style.color = "blue";
+document.querySelector("div").style.color = "blue";
 ```
 
 ### XX.3 Add and delete Elements
@@ -5739,7 +5905,7 @@ container.appendChild(paragraph);
 ```
 
 #### element.setAttribute
-> Change HTML style
+> Sets a value of the attribute for a specified name, of an element
 
 ***SYNTAX***
 ```javascript
@@ -5748,12 +5914,43 @@ element.setAttribute(attributename, attributevalue)
 ```
 
 ***EXAMPLE***
+```css
+.image {
+  margin-top: 10px;
+  background-image: url(img/photo.jpeg);
+  width: 0;
+  height: 0;
+  background-repeat: none;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.show {
+  width: 1170px;
+  height: 840px;
+}
+```
 ```html
-<div id="demo-setattribute" >Hello Property</div>
+<button>Hide/Show Image</button> 
+<div class="image"></div>
 ```
 ```javascript
-//ex: show "Hello getElementById" text into div
-document.getElementById("ddemo-setattribute").setAttribute(color, "blue");
+const buttonEvent = document.querySelector("button");
+buttonEvent.addEventListener("click", function(){
+    const img = document.querySelector(".image");              
+    if(img.getAttribute("class").endsWith("show")) {
+      img.setAttribute("class","image");
+    } else {
+      img.setAttribute("class","image show");      
+    }
+});
+```
+
+> OUTPUT: After click button
+
+```html
+<button>Hide/Show Image</button>    
+<div class="image show"></div>
 ```
 
 #### element.getAttribute
