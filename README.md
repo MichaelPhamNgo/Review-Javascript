@@ -5788,17 +5788,17 @@ document.querySelector("div").style.color = "blue";
 
 </html>
 ```
-> &lt;html&gt; is the root node
-> &lt;html&gt; has no parents
-> &lt;html&gt; is the parent of &lt;head&gt; and &lt;body&gt;
-> &lt;head&gt; is the first child of &lt;html&gt;
-> &lt;body&gt; is the last child of &lt;html&gt;
-> &lt;head&gt; has one child: &lt;title&gt;
-> &lt;title&gt; has one child (a text node): "DOM Tutorial"
-> &lt;body&gt; has two children: &lt;h1&gt; and &lt;p&gt;
-> &lt;h1&gt; has one child: "DOM Lesson one"
-> &lt;p&gt; has one child: "Hello world!"
-> &lt;h1&gt; and &lt;p&gt; are siblings
+> &lt;html&gt; is the root node <br/>
+> &lt;html&gt; has no parents <br/>
+> &lt;html&gt; is the parent of &lt;head&gt; and &lt;body&gt; <br/>
+> &lt;head&gt; is the first child of &lt;html&gt; <br/>
+> &lt;body&gt; is the last child of &lt;html&gt; <br/>
+> &lt;head&gt; has one child: &lt;title&gt; <br/>
+> &lt;title&gt; has one child (a text node): "DOM Tutorial" <br/>
+> &lt;body&gt; has two children: &lt;h1&gt; and &lt;p&gt; <br/>
+> &lt;h1&gt; has one child: "DOM Lesson one" <br/>
+> &lt;p&gt; has one child: "Hello world!" <br/>
+> &lt;h1&gt; and &lt;p&gt; are siblings <br/>
 
 #### Navigating Between Nodes
 - You can use the following node properties to navigate between nodes with JavaScript:
